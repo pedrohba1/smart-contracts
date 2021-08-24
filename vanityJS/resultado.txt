@@ -1,0 +1,72 @@
+#1
+seed: independent,all,torn,trap,busy,current,return,characteristic,melted,lake,pure,science
+string encontrada: p3dru
+hash em base58: FyHZR3dasDHjDTG9ZJnRjMxp3dru7jDreztPzBGk5WS
+#2
+seed: happy,help,rod,night,sign,history,birth,coal,value,popular,frog,least
+string encontrada: pedru
+hash em base58: HyAUjUF2jc4nxhL7xMasCLnikapedruVkDvfRuBp4s1e
+#3
+seed: function,perfect,cause,material,pink,salmon,gravity,closely,closer,rock,finger,wherever
+string encontrada: pedru
+hash em base58: CqkSEE26jso5PYbdLBwNDuAwhppedruEJUyCwBPSRjX2
+#4
+seed: corn,rule,bag,lost,twice,catch,see,theory,these,temperature,pick,discover
+string encontrada: p3dru
+hash em base58: 4BFFm5YMCTg5AXUUAfmvLa3e1XKXyp1ST5Yqp3druwkK
+#5
+seed: blew,tape,apart,gravity,folks,blood,answer,force,minute,wool,reader,gasoline
+string encontrada: p3dro
+hash em base58: 3xBJUSzNrPQDdwS6Tf6Z9q6p3droG1KzjY2n1w9gGoFw
+#6
+seed: include,diagram,go,rice,die,track,wagon,mouth,attempt,fell,almost,terrible
+string encontrada: pedro
+hash em base58: 9raSPicQNMuGzEKpedroAx17W14gmfyuXDeieGzn8zT4
+#7
+seed: slept,fish,mice,near,hall,broad,hospital,there,cheese,tube,anywhere,army
+string encontrada: p3dru
+hash em base58: 5VkhPZF6Bh1C6BkqGSLYNou4Tp3druuPuRctSt4UDnsD
+#8
+seed: dot,dear,term,bowl,happy,draw,space,relationship,mathematics,football,cross,small
+string encontrada: p3dru
+hash em base58: 6NR3jfK1zt6KsNNLSY4REyzmK7EvcXGMSq5XYfp3drue
+#9
+seed: occur,harbor,well,sold,goes,slip,fight,needed,headed,visitor,pick,pure
+string encontrada: pedro
+hash em base58: JC6fN4xEc7LV8pedroehsjS89KJZHxhA14r253eZm4vp
+#10
+seed: from,tube,production,stretch,bank,stranger,hand,where,distance,dot,sign,single
+string encontrada: p3dro
+hash em base58: CNNeFdL82xp3droUe47HAmDrw7AJpiugQhwR2WHAk63Y
+#11
+seed: respect,develop,willing,mission,should,check,cup,jack,better,movie,tube,seen
+string encontrada: p3dro
+hash em base58: FcXQmvEQUuqfo6p4L4FHqKnPCQv1dDsLEBhnXiUp3dro
+#12
+seed: garage,doubt,hunt,decide,week,finally,shut,slipped,cowboy,softly,putting,planned
+string encontrada: pedro
+hash em base58: 9FQ7rfvo6GLcxhaDDJB14gp5uCNXo9NY4pedropYDbjg
+#13
+seed: replied,frog,conversation,began,line,they,party,effort,making,automobile,college,both
+string encontrada: p3dru
+hash em base58: 2DBk9LDm59wSfp3drucGNUoUctDaq3apZG5L5d5wMdPy
+#14
+seed: fast,earth,expect,cannot,written,problem,term,lying,atmosphere,wish,making,try
+string encontrada: pedru
+hash em base58: 8e1u1uwBV6dyXsrdRv1qmPoV27r7CpedruCnBm5iNmaG
+#15
+seed: cream,use,right,proud,across,thing,branch,begun,whose,stock,trap,fish
+string encontrada: pedru
+hash em base58: 2pedruUsGjDFXSc5o1CViBH9GW1DxXoHAGEJPnZ9GmVH
+#16
+seed: machinery,further,putting,ago,together,asleep,obtain,recall,equally,wing,bow,buried
+string encontrada: pedro
+hash em base58: 93cJATiuYtpedroBgC8AjdgERJvFmPdarQUnRFrpTbdF
+#17
+seed: chest,mostly,add,chapter,how,second,additional,school,season,understanding,furniture,yes
+string encontrada: pedro
+hash em base58: 93ne3mXXYp1PKhhHGEyLpyJhLy2m1cpwATREpedroPgP
+#18
+seed: strength,success,remember,stream,trick,generally,diagram,carry,lake,detail,fairly,arrow
+string encontrada: p3dro
+hash em base58: DTn4wCuuwx2dp3dro7xwB7v8GCsMph6GWpznueRP9usc

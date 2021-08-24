@@ -1,0 +1,24 @@
+{
+  "name": "vanityjs",
+  "version": "1.0.0",
+  "description": "gerador de endereços vanity de btc",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedrohba1/vanityjs.git"
+  },
+  "author": "pedro bufulin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pedrohba1/vanityjs/issues"
+  },
+  "homepage": "https://github.com/pedrohba1/vanityjs#readme",
+  "dependencies": {
+    "bs58": "^4.0.1",
+    "random-words": "^1.1.1"
+  }
+}
