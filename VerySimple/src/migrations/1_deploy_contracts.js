@@ -1,5 +1,6 @@
 const verySimple = artifacts.require("VerySimple");
 const BN = web3.utils.BN;
+
 module.exports = function (deployer) {
   var a = new BN(2);
   var b = new BN(255);
