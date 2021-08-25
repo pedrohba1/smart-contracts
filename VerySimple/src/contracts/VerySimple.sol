@@ -3,22 +3,17 @@ pragma solidity ^0.5.10;
 
 contract VerySimple {
     int balance;
-    constructor(int i) public {balance = i;}
+    constructor(int i) public {
+        balance = i;
+    }
     
     function inc() public {
         balance = balance +1; 
-        
     }
     
     function dec() public 
     {
         balance = balance -1;
-    }
-    
-        
-    function setValue(int c) public returns (int) {
-         balance= c;
-         return balance;
     }
     
     function check(int c) public returns (bool) {
