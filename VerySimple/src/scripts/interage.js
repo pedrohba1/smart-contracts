@@ -1,14 +1,22 @@
+const instance = artifacts.require("VerySimple");
+const BN = web3.utils.BN;
 
 module.exports = async function(done) {
-    var  myContract = artifacts.require("VerySimple");
-    const accounts = await web3.eth.getAccounts();
+    const contract = await instance.deployed();
+    var balance = await contract.getBalance.call();
 
-    console.log('endreços disponíveis para uso', accounts);
-    const instance = await myContract.deployed()    
+    console.log('balnaço total');
+    console.log(balance.toString(2));
+    console.log('bits ocupados:', balance.bitLength())
+
+    await contract.inc();
+    await contract.inc();
 
 
-    //o contrato começa no MAX_INT. Depois de um incremento, temos um overflow.
-    await instance.inc();
+    balance = await contract.getBalance.call();
+    console.log('balnaço total');
+    console.log(balance.toString(2));
+    console.log('bits ocupados:', balance.bitLength())
 
     done();
 }
