@@ -7,6 +7,7 @@ contract VerySimpleFix {
     constructor(int i) public {
         balance = i;
     }
+    
     using SignedSafeMath for int256;
     
     function inc() public {
