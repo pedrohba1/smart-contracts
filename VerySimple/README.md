@@ -20,6 +20,7 @@ truffle migrate
 truffle exec src/scripts/interage.js 
 ```
 
+o script `checkBalance` foi feito para ver o balanço de uma carteira na rede ropsten. Execute com `truffle exec src/scripts/checkBalance.js --network ropsten` . 
 ### motivações desse projeto
 
 Esse projeto consiste em testar o underflow e o overflow na linguagem solidity na versão 0.5.10.
