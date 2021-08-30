@@ -1,9 +1,15 @@
 var HDWalletProvider = require("truffle-hdwallet-provider");
-require('dotenv').config()
+const dotenv = require('dotenv');
+const result = dotenv.config();
+
+if (result.error) {
+  throw result.error
+}
 
 
 const mnemonic = process.env.MNEMONIC;
 const projectID = process.env.PROJECT_ID;
+
 
 module.exports = {
   contracts_directory: "./src/contracts",
