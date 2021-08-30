@@ -1,4 +1,4 @@
-require('dotenv').config({path: '../../.env'})
+require('dotenv').config({path: '../../../.env'})
 var Web3 = require('web3');
 
 address = process.argv[2];
