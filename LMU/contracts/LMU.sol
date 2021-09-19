@@ -35,6 +35,20 @@ contract LMU {
         console.log("valor enviado para o contrato %s", msg.value);
     }
 
+    function pegMLU() public view returns (uint256) {
+        uint256 v = 0;
+        LancesValor storage l = lances[v];
+        while (v < 10 ^ 18) {
+            l = lances[v];
+            if (l.ehUnico) {
+                return v;
+            }
+            v += 1;
+            l = lances[v];
+        }
+        return 0;
+    }
+
     function fazLance() public payable {
         verificaFim();
         require(meuEstado == EstadosLeilao.LancesEstado, "Fim dos lances...");
