@@ -1,0 +1,1471 @@
+{
+  "contractName": "TestSimpleCommit",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "c1",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes1",
+          "name": "v1",
+          "type": "bytes1"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "nonce1",
+          "type": "bytes32"
+        }
+      ],
+      "name": "doTest",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "getResult",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"c1\",\"type\":\"bytes32\"},{\"internalType\":\"bytes1\",\"name\":\"v1\",\"type\":\"bytes1\"},{\"internalType\":\"bytes32\",\"name\":\"nonce1\",\"type\":\"bytes32\"}],\"name\":\"doTest\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"getResult\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/pedro/Documents/smart-contracts/SimpleCommit/contracts/TestSimpleCommit.sol\":\"TestSimpleCommit\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/pedro/Documents/smart-contracts/SimpleCommit/contracts/SimpleCommit.sol\":{\"keccak256\":\"0xea25920f6a0d3bd1e4f3d435a9e9f599e469511bfa1ee261ab304c703a2769d3\",\"urls\":[\"bzz-raw://72c795fdf8207f828d278937076dea98d6e5c76a6a465a76dd418b832b09bf5b\",\"dweb:/ipfs/QmNenXy4VgPvDj6u84wTB9KgEQvoMXWaPTzpTd9UoCBzHZ\"]},\"/home/pedro/Documents/smart-contracts/SimpleCommit/contracts/TestSimpleCommit.sol\":{\"keccak256\":\"0x96bf56047b57300192e1e4663438cca144350c992fd5576728fc30c8cdaeb1ec\",\"urls\":[\"bzz-raw://a8cb99ecbc253b546223839e79e1754cda5652948d05d851b9b3ad924a2ef6f2\",\"dweb:/ipfs/QmUGNdSpmade8utzBqLS6UaEou9SGR6BEZ7cexEjocMgqZ\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060008060006101000a81548160ff0219169083151502179055506102e58061003a6000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063de2927891461003b578063fb860a5d1461005d575b600080fd5b6100436100c1565b604051808215151515815260200191505060405180910390f35b6100bf6004803603606081101561007357600080fd5b810190808035906020019092919080357effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff19169060200190929190803590602001909291905050506100d7565b005b60008060009054906101000a900460ff16905090565b600173__SimpleCommit__________________________623a471d9091856040518363ffffffff1660e01b8152600401808381526020018281526020019250505060006040518083038186803b15801561013057600080fd5b505af4158015610144573d6000803e3d6000fd5b50505050600173__SimpleCommit__________________________63ec01d198909183856040518463ffffffff1660e01b815260040180848152602001838152602001827effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff19168152602001935050505060006040518083038186803b1580156101ee57600080fd5b505af4158015610202573d6000803e3d6000fd5b50505050600173__SimpleCommit__________________________6361f7bb2990916040518263ffffffff1660e01b81526004018082815260200191505060206040518083038186803b15801561025857600080fd5b505af415801561026c573d6000803e3d6000fd5b505050506040513d602081101561028257600080fd5b81019080805190602001909291905050506000806101000a81548160ff02191690831515021790555050505056fea265627a7a72315820ec2bfe962415ebbcac0ca6a943ca5c985f5c6921839a082fe38cefb068973af364736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c8063de2927891461003b578063fb860a5d1461005d575b600080fd5b6100436100c1565b604051808215151515815260200191505060405180910390f35b6100bf6004803603606081101561007357600080fd5b810190808035906020019092919080357effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff19169060200190929190803590602001909291905050506100d7565b005b60008060009054906101000a900460ff16905090565b600173__SimpleCommit__________________________623a471d9091856040518363ffffffff1660e01b8152600401808381526020018281526020019250505060006040518083038186803b15801561013057600080fd5b505af4158015610144573d6000803e3d6000fd5b50505050600173__SimpleCommit__________________________63ec01d198909183856040518463ffffffff1660e01b815260040180848152602001838152602001827effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff19168152602001935050505060006040518083038186803b1580156101ee57600080fd5b505af4158015610202573d6000803e3d6000fd5b50505050600173__SimpleCommit__________________________6361f7bb2990916040518263ffffffff1660e01b81526004018082815260200191505060206040518083038186803b15801561025857600080fd5b505af415801561026c573d6000803e3d6000fd5b505050506040513d602081101561028257600080fd5b81019080805190602001909291905050506000806101000a81548160ff02191690831515021790555050505056fea265627a7a72315820ec2bfe962415ebbcac0ca6a943ca5c985f5c6921839a082fe38cefb068973af364736f6c63430005100032",
+  "sourceMap": "65:353:1:-;;;182:39;8:9:-1;5:2;;;30:1;27;20:12;5:2;182:39:1;213:5;208:2;;:10;;;;;;;;;;;;;;;;;;65:353;;;;;;",
+  "deployedSourceMap": "65:353:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;65:353:1;;;;;;;;;;;;;;;;;;;;;;;;358:57;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;225:130;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;225:130:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;358:57;395:4;410:2;;;;;;;;;;;403:9;;358:57;:::o;225:130::-;288:3;:10;;;;299:2;288:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;288:14:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;288:14:1;;;;306:3;:10;;;;317:6;324:2;306:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;306:21:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;306:21:1;;;;337:3;:13;;;;:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;337:15:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;337:15:1;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;337:15:1;;;;;;;;;;;;;;;;332:2;;:20;;;;;;;;;;;;;;;;;;225:130;;;:::o",
+  "source": "pragma solidity >=0.4.25 <0.6.0;\n\n\nimport \"./SimpleCommit.sol\";\n\ncontract TestSimpleCommit {\n\nusing SimpleCommit for SimpleCommit.CommitType;\n\nbool ok;\nSimpleCommit.CommitType sc1;\n\nconstructor () public {\n  ok = false;\n}\n\n\n\nfunction doTest(bytes32 c1,byte v1,bytes32 nonce1) public {\n\n  sc1.commit(c1);\n  sc1.reveal(nonce1,v1);\n\n  ok = sc1.isCorrect();\n}\n\n\nfunction getResult() public returns (bool) {\nreturn ok;\n}\n\n}\n",
+  "sourcePath": "/home/pedro/Documents/smart-contracts/SimpleCommit/contracts/TestSimpleCommit.sol",
+  "ast": {
+    "absolutePath": "/home/pedro/Documents/smart-contracts/SimpleCommit/contracts/TestSimpleCommit.sol",
+    "exportedSymbols": {
+      "TestSimpleCommit": [
+        195
+      ]
+    },
+    "id": 196,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 141,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".25",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:1"
+      },
+      {
+        "absolutePath": "/home/pedro/Documents/smart-contracts/SimpleCommit/contracts/SimpleCommit.sol",
+        "file": "./SimpleCommit.sol",
+        "id": 142,
+        "nodeType": "ImportDirective",
+        "scope": 196,
+        "sourceUnit": 140,
+        "src": "35:28:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 195,
+        "linearizedBaseContracts": [
+          195
+        ],
+        "name": "TestSimpleCommit",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 145,
+            "libraryName": {
+              "contractScope": null,
+              "id": 143,
+              "name": "SimpleCommit",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 139,
+              "src": "100:12:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SimpleCommit_$139",
+                "typeString": "library SimpleCommit"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "94:47:1",
+            "typeName": {
+              "contractScope": null,
+              "id": 144,
+              "name": "SimpleCommit.CommitType",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 13,
+              "src": "117:23:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_CommitType_$13_storage_ptr",
+                "typeString": "struct SimpleCommit.CommitType"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 147,
+            "name": "ok",
+            "nodeType": "VariableDeclaration",
+            "scope": 195,
+            "src": "143:7:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 146,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "143:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 149,
+            "name": "sc1",
+            "nodeType": "VariableDeclaration",
+            "scope": 195,
+            "src": "152:27:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_CommitType_$13_storage",
+              "typeString": "struct SimpleCommit.CommitType"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 148,
+              "name": "SimpleCommit.CommitType",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 13,
+              "src": "152:23:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_CommitType_$13_storage_ptr",
+                "typeString": "struct SimpleCommit.CommitType"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 156,
+              "nodeType": "Block",
+              "src": "204:17:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 154,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 152,
+                      "name": "ok",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 147,
+                      "src": "208:2:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "66616c7365",
+                      "id": 153,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "213:5:1",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "false"
+                    },
+                    "src": "208:10:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 155,
+                  "nodeType": "ExpressionStatement",
+                  "src": "208:10:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 157,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 150,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "194:2:1"
+            },
+            "returnParameters": {
+              "id": 151,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "204:0:1"
+            },
+            "scope": 195,
+            "src": "182:39:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 185,
+              "nodeType": "Block",
+              "src": "283:72:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 169,
+                        "name": "c1",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 159,
+                        "src": "299:2:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 166,
+                        "name": "sc1",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 149,
+                        "src": "288:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CommitType_$13_storage",
+                          "typeString": "struct SimpleCommit.CommitType storage ref"
+                        }
+                      },
+                      "id": 168,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "commit",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 40,
+                      "src": "288:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_CommitType_$13_storage_ptr_$_t_bytes32_$returns$__$bound_to$_t_struct$_CommitType_$13_storage_ptr_$",
+                        "typeString": "function (struct SimpleCommit.CommitType storage pointer,bytes32)"
+                      }
+                    },
+                    "id": 170,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "288:14:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 171,
+                  "nodeType": "ExpressionStatement",
+                  "src": "288:14:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 175,
+                        "name": "nonce1",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 163,
+                        "src": "317:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 176,
+                        "name": "v1",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 161,
+                        "src": "324:2:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes1",
+                          "typeString": "bytes1"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes1",
+                          "typeString": "bytes1"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 172,
+                        "name": "sc1",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 149,
+                        "src": "306:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CommitType_$13_storage",
+                          "typeString": "struct SimpleCommit.CommitType storage ref"
+                        }
+                      },
+                      "id": 174,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "reveal",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 93,
+                      "src": "306:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_CommitType_$13_storage_ptr_$_t_bytes32_$_t_bytes1_$returns$__$bound_to$_t_struct$_CommitType_$13_storage_ptr_$",
+                        "typeString": "function (struct SimpleCommit.CommitType storage pointer,bytes32,bytes1)"
+                      }
+                    },
+                    "id": 177,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "306:21:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 178,
+                  "nodeType": "ExpressionStatement",
+                  "src": "306:21:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 183,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 179,
+                      "name": "ok",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 147,
+                      "src": "332:2:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 180,
+                          "name": "sc1",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 149,
+                          "src": "337:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_CommitType_$13_storage",
+                            "typeString": "struct SimpleCommit.CommitType storage ref"
+                          }
+                        },
+                        "id": 181,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "isCorrect",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 112,
+                        "src": "337:13:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_CommitType_$13_storage_ptr_$returns$_t_bool_$bound_to$_t_struct$_CommitType_$13_storage_ptr_$",
+                          "typeString": "function (struct SimpleCommit.CommitType storage pointer) returns (bool)"
+                        }
+                      },
+                      "id": 182,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "337:15:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "332:20:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 184,
+                  "nodeType": "ExpressionStatement",
+                  "src": "332:20:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 186,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "doTest",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 164,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 159,
+                  "name": "c1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 186,
+                  "src": "241:10:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 158,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "241:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 161,
+                  "name": "v1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 186,
+                  "src": "252:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes1",
+                    "typeString": "bytes1"
+                  },
+                  "typeName": {
+                    "id": 160,
+                    "name": "byte",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "252:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes1",
+                      "typeString": "bytes1"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 163,
+                  "name": "nonce1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 186,
+                  "src": "260:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 162,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "260:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "240:35:1"
+            },
+            "returnParameters": {
+              "id": 165,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "283:0:1"
+            },
+            "scope": 195,
+            "src": "225:130:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 193,
+              "nodeType": "Block",
+              "src": "401:14:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 191,
+                    "name": "ok",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 147,
+                    "src": "410:2:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 190,
+                  "id": 192,
+                  "nodeType": "Return",
+                  "src": "403:9:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 194,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getResult",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 187,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "376:2:1"
+            },
+            "returnParameters": {
+              "id": 190,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 189,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 194,
+                  "src": "395:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 188,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "395:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "394:6:1"
+            },
+            "scope": 195,
+            "src": "358:57:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 196,
+        "src": "65:353:1"
+      }
+    ],
+    "src": "0:419:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/home/pedro/Documents/smart-contracts/SimpleCommit/contracts/TestSimpleCommit.sol",
+      "exportedSymbols": {
+        "TestSimpleCommit": [
+          195
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".25",
+            "<",
+            "0.6",
+            ".0"
+          ]
+        },
+        "id": 141,
+        "name": "PragmaDirective",
+        "src": "0:32:1"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 140,
+          "absolutePath": "/home/pedro/Documents/smart-contracts/SimpleCommit/contracts/SimpleCommit.sol",
+          "file": "./SimpleCommit.sol",
+          "scope": 196,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 142,
+        "name": "ImportDirective",
+        "src": "35:28:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            195
+          ],
+          "name": "TestSimpleCommit",
+          "scope": 196
+        },
+        "children": [
+          {
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "SimpleCommit",
+                  "referencedDeclaration": 139,
+                  "type": "library SimpleCommit"
+                },
+                "id": 143,
+                "name": "UserDefinedTypeName",
+                "src": "100:12:1"
+              },
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "SimpleCommit.CommitType",
+                  "referencedDeclaration": 13,
+                  "type": "struct SimpleCommit.CommitType"
+                },
+                "id": 144,
+                "name": "UserDefinedTypeName",
+                "src": "117:23:1"
+              }
+            ],
+            "id": 145,
+            "name": "UsingForDirective",
+            "src": "94:47:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "ok",
+              "scope": 195,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "bool",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "bool",
+                  "type": "bool"
+                },
+                "id": 146,
+                "name": "ElementaryTypeName",
+                "src": "143:4:1"
+              }
+            ],
+            "id": 147,
+            "name": "VariableDeclaration",
+            "src": "143:7:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "sc1",
+              "scope": 195,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct SimpleCommit.CommitType",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "SimpleCommit.CommitType",
+                  "referencedDeclaration": 13,
+                  "type": "struct SimpleCommit.CommitType"
+                },
+                "id": 148,
+                "name": "UserDefinedTypeName",
+                "src": "152:23:1"
+              }
+            ],
+            "id": 149,
+            "name": "VariableDeclaration",
+            "src": "152:27:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 195,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 150,
+                "name": "ParameterList",
+                "src": "194:2:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 151,
+                "name": "ParameterList",
+                "src": "204:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 147,
+                              "type": "bool",
+                              "value": "ok"
+                            },
+                            "id": 152,
+                            "name": "Identifier",
+                            "src": "208:2:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "66616c7365",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "bool",
+                              "type": "bool",
+                              "value": "false"
+                            },
+                            "id": 153,
+                            "name": "Literal",
+                            "src": "213:5:1"
+                          }
+                        ],
+                        "id": 154,
+                        "name": "Assignment",
+                        "src": "208:10:1"
+                      }
+                    ],
+                    "id": 155,
+                    "name": "ExpressionStatement",
+                    "src": "208:10:1"
+                  }
+                ],
+                "id": 156,
+                "name": "Block",
+                "src": "204:17:1"
+              }
+            ],
+            "id": 157,
+            "name": "FunctionDefinition",
+            "src": "182:39:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "doTest",
+              "scope": 195,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "c1",
+                      "scope": 186,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 158,
+                        "name": "ElementaryTypeName",
+                        "src": "241:7:1"
+                      }
+                    ],
+                    "id": 159,
+                    "name": "VariableDeclaration",
+                    "src": "241:10:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "v1",
+                      "scope": 186,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes1",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "byte",
+                          "type": "bytes1"
+                        },
+                        "id": 160,
+                        "name": "ElementaryTypeName",
+                        "src": "252:4:1"
+                      }
+                    ],
+                    "id": 161,
+                    "name": "VariableDeclaration",
+                    "src": "252:7:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "nonce1",
+                      "scope": 186,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 162,
+                        "name": "ElementaryTypeName",
+                        "src": "260:7:1"
+                      }
+                    ],
+                    "id": 163,
+                    "name": "VariableDeclaration",
+                    "src": "260:14:1"
+                  }
+                ],
+                "id": 164,
+                "name": "ParameterList",
+                "src": "240:35:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 165,
+                "name": "ParameterList",
+                "src": "283:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bytes32",
+                                  "typeString": "bytes32"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "commit",
+                              "referencedDeclaration": 40,
+                              "type": "function (struct SimpleCommit.CommitType storage pointer,bytes32)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 149,
+                                  "type": "struct SimpleCommit.CommitType storage ref",
+                                  "value": "sc1"
+                                },
+                                "id": 166,
+                                "name": "Identifier",
+                                "src": "288:3:1"
+                              }
+                            ],
+                            "id": 168,
+                            "name": "MemberAccess",
+                            "src": "288:10:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 159,
+                              "type": "bytes32",
+                              "value": "c1"
+                            },
+                            "id": 169,
+                            "name": "Identifier",
+                            "src": "299:2:1"
+                          }
+                        ],
+                        "id": 170,
+                        "name": "FunctionCall",
+                        "src": "288:14:1"
+                      }
+                    ],
+                    "id": 171,
+                    "name": "ExpressionStatement",
+                    "src": "288:14:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bytes32",
+                                  "typeString": "bytes32"
+                                },
+                                {
+                                  "typeIdentifier": "t_bytes1",
+                                  "typeString": "bytes1"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "reveal",
+                              "referencedDeclaration": 93,
+                              "type": "function (struct SimpleCommit.CommitType storage pointer,bytes32,bytes1)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 149,
+                                  "type": "struct SimpleCommit.CommitType storage ref",
+                                  "value": "sc1"
+                                },
+                                "id": 172,
+                                "name": "Identifier",
+                                "src": "306:3:1"
+                              }
+                            ],
+                            "id": 174,
+                            "name": "MemberAccess",
+                            "src": "306:10:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 163,
+                              "type": "bytes32",
+                              "value": "nonce1"
+                            },
+                            "id": 175,
+                            "name": "Identifier",
+                            "src": "317:6:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 161,
+                              "type": "bytes1",
+                              "value": "v1"
+                            },
+                            "id": 176,
+                            "name": "Identifier",
+                            "src": "324:2:1"
+                          }
+                        ],
+                        "id": 177,
+                        "name": "FunctionCall",
+                        "src": "306:21:1"
+                      }
+                    ],
+                    "id": 178,
+                    "name": "ExpressionStatement",
+                    "src": "306:21:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 147,
+                              "type": "bool",
+                              "value": "ok"
+                            },
+                            "id": 179,
+                            "name": "Identifier",
+                            "src": "332:2:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "bool",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "isCorrect",
+                                  "referencedDeclaration": 112,
+                                  "type": "function (struct SimpleCommit.CommitType storage pointer) returns (bool)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 149,
+                                      "type": "struct SimpleCommit.CommitType storage ref",
+                                      "value": "sc1"
+                                    },
+                                    "id": 180,
+                                    "name": "Identifier",
+                                    "src": "337:3:1"
+                                  }
+                                ],
+                                "id": 181,
+                                "name": "MemberAccess",
+                                "src": "337:13:1"
+                              }
+                            ],
+                            "id": 182,
+                            "name": "FunctionCall",
+                            "src": "337:15:1"
+                          }
+                        ],
+                        "id": 183,
+                        "name": "Assignment",
+                        "src": "332:20:1"
+                      }
+                    ],
+                    "id": 184,
+                    "name": "ExpressionStatement",
+                    "src": "332:20:1"
+                  }
+                ],
+                "id": 185,
+                "name": "Block",
+                "src": "283:72:1"
+              }
+            ],
+            "id": 186,
+            "name": "FunctionDefinition",
+            "src": "225:130:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getResult",
+              "scope": 195,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 187,
+                "name": "ParameterList",
+                "src": "376:2:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 194,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 188,
+                        "name": "ElementaryTypeName",
+                        "src": "395:4:1"
+                      }
+                    ],
+                    "id": 189,
+                    "name": "VariableDeclaration",
+                    "src": "395:4:1"
+                  }
+                ],
+                "id": 190,
+                "name": "ParameterList",
+                "src": "394:6:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 190
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 147,
+                          "type": "bool",
+                          "value": "ok"
+                        },
+                        "id": 191,
+                        "name": "Identifier",
+                        "src": "410:2:1"
+                      }
+                    ],
+                    "id": 192,
+                    "name": "Return",
+                    "src": "403:9:1"
+                  }
+                ],
+                "id": 193,
+                "name": "Block",
+                "src": "401:14:1"
+              }
+            ],
+            "id": 194,
+            "name": "FunctionDefinition",
+            "src": "358:57:1"
+          }
+        ],
+        "id": 195,
+        "name": "ContractDefinition",
+        "src": "65:353:1"
+      }
+    ],
+    "id": 196,
+    "name": "SourceUnit",
+    "src": "0:419:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "1632587121459": {
+      "events": {},
+      "links": {
+        "SimpleCommit": "0x41a589aCFC0229058BB36072dFF7eDc06195C9B1"
+      },
+      "address": "0x2Bc90Ed3BB89C7B048e83e0D998BE132b05A7542",
+      "transactionHash": "0xb0c5fb76d16b9d464b19090852476d984f9da1c6b2c02e85a2012b72c66ed2ff"
+    }
+  },
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-09-25T16:25:44.251Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
