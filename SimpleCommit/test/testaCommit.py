@@ -21,7 +21,7 @@ def main():
     user = accounts[0]
 
     v = b'\x0A'
-    #v = np.uint16(10)
+    #v = np.uint16(10) 
     nonce1 = createNonce(b'nonce1')
     commit1 = doCommit(nonce1,v)
 
