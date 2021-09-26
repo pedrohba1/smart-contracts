@@ -19,7 +19,6 @@ contract TestSimpleCommit {
     ) public {
         sc1.commit(c1);
         sc1.reveal(nonce1, v1);
-
         ok = sc1.isCorrect();
     }
 
