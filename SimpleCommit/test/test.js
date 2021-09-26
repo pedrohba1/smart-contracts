@@ -14,14 +14,14 @@ contract("Testes do SimpleCommit", async accounts => {
         const instance = await TestSimpleCommit.deployed();
 
         //cria um nonce
-        var nonce = crypto.createHash('md5').update('nonce1').digest('hex');
+        var nonce = crypto.createHash('sha256').update('nonce1').digest('hex');
         var segredo = 'A';
 
         console.log('pra garantir que o segredo tem 1 byte', byteCount(segredo));
         console.log('O nonce pode ter até 32 bytes', byteCount(nonce));
 
         //faz um hash com o nonce
-        var hash = crypto.createHash('md5').update(nonce).update(segredo).digest('hex');
+        var hash = crypto.createHash('sha256').update(nonce).update(segredo).digest('hex');
 
         //converter a string do hash para pegar o valor dela:
         console.log('tamanho da hash em bytes sem conversão', byteCount(hash));
@@ -30,7 +30,7 @@ contract("Testes do SimpleCommit", async accounts => {
         hash = web3.utils.asciiToHex(hash);
         segredo = web3.utils.asciiToHex(segredo);
         nonce = web3.utils.asciiToHex(nonce);
-        await instance.doTest(hash, segredo,nonce);
+        await debug(instance.doTest(hash, segredo,nonce));
         console.log(await instance.getResult.call());
     });
 });
