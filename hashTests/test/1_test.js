@@ -1,8 +1,14 @@
 const HashContract = artifacts.require("HashContract");
-const crypto = require('crypto')
+const CryptoJS = require('crypto-js');
+var SHA256 = require("crypto-js/sha256");
 
 function byteCount(s) {
     return encodeURI(s).split(/%..|./).length - 1;
+}
+
+function padUntil32Bytes(string) {
+    string = string.padEnd(32,'0');
+    return string;
 }
 
 contract("Testes do SimpleCommit", async accounts => {
@@ -11,12 +17,12 @@ contract("Testes do SimpleCommit", async accounts => {
     });
     it("A hash retornada deveria ser igual a criada fora do contrato", async () => {
         const instance = await HashContract.deployed();
-        segredo = web3.utils.asciiToHex('A');
-        console.log('segredo em hexa', web3.utils.asciiToHex('A'));
-        const result = await instance.SimpleHash.call(segredo);
-        console.log('hash resultante da palavra A no contrato', result);
+        secret = web3.utils.toHex('A');
+        secret = padUntil32Bytes(secret)
+        const result = await instance.SimpleHash.call(secret);
+        console.log('function return',result);
 
-        const SHA256 = crypto.createHash('sha256').update('A', 'hex').digest('hex');
-        console.log('hash fora do contrato', SHA256);
+        hash = SHA256(secret);
+        console.log('hash outside the contract', hash.toString(CryptoJS.enc.Hex));
     });
 });
