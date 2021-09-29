@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.4.24)  29 SEP 2021 13:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.4.24)  29 SEP 2021 13:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -220,79 +220,79 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
-LaTeX Warning: Reference `fig:exampleFig1' on page 2 undefined on input line 101.
+LaTeX Warning: Reference `fig:exampleFig1' on page 2 undefined on input line 103.
 
 
-LaTeX Warning: Reference `fig:exampleFig2' on page 2 undefined on input line 102.
+LaTeX Warning: Reference `fig:exampleFig2' on page 2 undefined on input line 104.
 
 
-LaTeX Warning: File `fig1.jpg' not found on input line 108.
+LaTeX Warning: File `fig1.jpg' not found on input line 110.
 
 
-/home/pedro/Documents/smart-contracts/killerDapp/main.tex:108: Package pdftex.def Error: File `fig1.jpg' not found: using draft setting.
+/home/pedro/Documents/smart-contracts/killerDapp/main.tex:110: Package pdftex.def Error: File `fig1.jpg' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.108 ...udegraphics[width=.5\textwidth]{fig1.jpg}
+l.110 ...udegraphics[width=.5\textwidth]{fig1.jpg}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 108.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 110.
 (/usr/share/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 109.
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 111.
  (/usr/share/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
 
-LaTeX Warning: File `fig2.jpg' not found on input line 115.
+LaTeX Warning: File `fig2.jpg' not found on input line 117.
 
 
-/home/pedro/Documents/smart-contracts/killerDapp/main.tex:115: Package pdftex.def Error: File `fig2.jpg' not found: using draft setting.
+/home/pedro/Documents/smart-contracts/killerDapp/main.tex:117: Package pdftex.def Error: File `fig2.jpg' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.115 ...udegraphics[width=.3\textwidth]{fig2.jpg}
+l.117 ...udegraphics[width=.3\textwidth]{fig2.jpg}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: Reference `sec:figs' on page 2 undefined on input line 117.
+LaTeX Warning: Reference `sec:figs' on page 2 undefined on input line 119.
 
 
-LaTeX Warning: Reference `sec:figs' on page 2 undefined on input line 117.
+LaTeX Warning: Reference `sec:figs' on page 2 undefined on input line 119.
 
 [2]
 
-LaTeX Warning: File `table.jpg' not found on input line 133.
+LaTeX Warning: File `table.jpg' not found on input line 135.
 
 
-/home/pedro/Documents/smart-contracts/killerDapp/main.tex:133: Package pdftex.def Error: File `table.jpg' not found: using draft setting.
+/home/pedro/Documents/smart-contracts/killerDapp/main.tex:135: Package pdftex.def Error: File `table.jpg' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.133 ...degraphics[width=.7\textwidth]{table.jpg}
+l.135 ...degraphics[width=.7\textwidth]{table.jpg}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: Citation `knuth:84' on page 3 undefined on input line 148.
+LaTeX Warning: Citation `knuth:84' on page 3 undefined on input line 150.
 
 
-LaTeX Warning: Citation `boulic:91' on page 3 undefined on input line 149.
+LaTeX Warning: Citation `boulic:91' on page 3 undefined on input line 151.
 
 
-LaTeX Warning: Citation `smith:99' on page 3 undefined on input line 149.
+LaTeX Warning: Citation `smith:99' on page 3 undefined on input line 151.
 
 No file main.bbl.
 [3] (/home/pedro/Documents/smart-contracts/killerDapp/main.aux)
@@ -304,15 +304,15 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 3708 strings out of 479383
- 59410 string characters out of 5875830
- 342010 words of memory out of 5000000
- 20756 multiletter control sequences out of 15000+600000
+ 3709 strings out of 479383
+ 59418 string characters out of 5875830
+ 343010 words of memory out of 5000000
+ 20757 multiletter control sequences out of 15000+600000
  422449 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,8n,85p,476b,302s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /home/pedro/Documents/smart-contracts/killerDapp/main.pdf (3 pages, 80269 bytes).
+Output written on /home/pedro/Documents/smart-contracts/killerDapp/main.pdf (3 pages, 80557 bytes).
 PDF statistics:
  43 PDF objects out of 1000 (max. 8388607)
  30 compressed objects within 1 object stream
