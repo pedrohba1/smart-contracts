@@ -17,12 +17,11 @@ contract("Testes do SimpleCommit", async accounts => {
     });
     it("A hash retornada deveria ser igual a criada fora do contrato", async () => {
         const instance = await HashContract.deployed();
-        secret = web3.utils.toHex('A');
-        secret = padUntil32Bytes(secret)
+        let secret = web3.utils.toHex('A');
         const result = await instance.SimpleHash.call(secret);
+        await debug( instance.SimpleHash.call(secret));
         console.log('function return',result);
-
         hash = SHA256(secret);
-        console.log('hash outside the contract', hash.toString(CryptoJS.enc.Hex));
+        console.log('hash outside the contract',hash.toString());
     });
 });
