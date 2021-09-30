@@ -9,11 +9,10 @@ contract("Testes do ParImpar", async accounts => {
         console.log(instance.address);
     });
 
-    it(`jogadores deveriam ser capazes de escolher par ou ímpar, 
-    mas ambos escolherem a mesma jogada não deveria ser possível`, async () =>{
-
-
-
+    it(`jogadores deveriam ser capazes de escolher par ou ímpar`, async () =>{
+        const instance = await ParImpar.deployed();
+        await instance.choosePlay("PAR", {from: accounts[0]});
+        await instance.choosePlay("IMPAR", {from: accounts[1]});
 
     });
 
