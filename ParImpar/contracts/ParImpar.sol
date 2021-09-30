@@ -53,12 +53,12 @@ contract ParImpar {
 
     modifier isParticipant {
         require (participants[msg.sender].exists == true,
-         "msg.sender precisa ser um dos particiapntes");
+         "msg.sender needs to be one of the participants");
         _;
    }    
     
     modifier chooseOnce {
-        require(participants[msg.sender].hasChosen == false, "você não pode mudar sua escolha");
+        require(participants[msg.sender].hasChosen == false, "you can't change your choice");
         _;
     }
 
@@ -76,8 +76,8 @@ contract ParImpar {
 
     function doCommit(bytes32 h) public payable isParticipant{
         require(participants[msg.sender].hasChosen == true, 
-        "O participante precisa ter selecionado uma jogada");
-        require(msg.value >0, "pariticpantes devem dar algum valor ao contrato");
+        "participant needs to have selected a play");
+        require(msg.value >0, "participants need to bet some value");
         participants[msg.sender].sc.commit(h);
         funds += msg.value;
     }
@@ -93,7 +93,7 @@ contract ParImpar {
 
 
     function distributeFunds() public returns (uint256)  {
-        require(ok == true, "os dois commits ainda não foram revelados");
+        require(ok == true, "the commits were not revealed yet");
         uint256 val1 =  participants[participant1].sc.getValue();
         uint256 val2 =  participants[participant2].sc.getValue();
 
