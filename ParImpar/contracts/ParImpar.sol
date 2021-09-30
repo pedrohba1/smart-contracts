@@ -4,18 +4,21 @@ import "./SimpleCommit.sol";
 
 contract ParImpar {
     using SimpleCommit for SimpleCommit.CommitType;
+   
+    // Para não esquecer qual é qual:
+    //Odd é ímpar
+    // Even é par
     enum ChosenPlay {
         Even,
         Odd 
     }
-    // Para não esquecer qual é qual:
-    //Odd é ímpar
-    // Even é par
+
 
 
     struct Participant {
         address payable _address;
         ChosenPlay playOfChoice;
+        bool hasChosen;
     }
 
     Participant participant1;
@@ -51,24 +54,37 @@ contract ParImpar {
         );      
         if(keccak256(abi.encodePacked((s))) == keccak256(abi.encodePacked(("PAR")))){
             if (msg.sender == participant1._address){
+                require(participant2.playOfChoice != ChosenPlay.Even, 
+                "participantes não podem escolher o mesmo valor");
                 participant1.playOfChoice = ChosenPlay.Even;
+                participant1.hasChosen = true;
             }
             if (msg.sender == participant2._address){
+                require(participant1.playOfChoice != ChosenPlay.Even, 
+                "participantes não podem escolher o mesmo valor");
                 participant2.playOfChoice = ChosenPlay.Even;
+                participant2.hasChosen = true;
             }
         }  
         if(keccak256(abi.encodePacked((s))) == keccak256(abi.encodePacked(("IMPAR")))){
             if (msg.sender == participant1._address){
+                require(participant2.playOfChoice != ChosenPlay.Odd, 
+                "participantes não podem escolher o mesmo valor");
                 participant1.playOfChoice = ChosenPlay.Odd;
+                participant1.hasChosen = true;
             }
             if (msg.sender == participant2._address){
+                require(participant1.playOfChoice != ChosenPlay.Odd, 
+                "participantes não podem escolher o mesmo valor");
                 participant2.playOfChoice = ChosenPlay.Odd;
+                participant2.hasChosen = true;
             }
         }  
-   
     }
 
     function doCommit(bytes32 h) public payable isParticipant{
+        require(participant1.hasChosen && participant2.hasChosen, 
+        "Ambos participantes precisam ter selecionada um tipo de jogada");
         require(msg.value >0, "pariticpantes devem dar algum valor ao contrato");
         if (msg.sender == participant1._address){
             sc1.commit(h);
