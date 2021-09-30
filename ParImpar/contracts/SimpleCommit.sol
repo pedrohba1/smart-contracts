@@ -38,7 +38,7 @@ library SimpleCommit {
         }
     }
 
-    function isCorrect(CommitType storage c) public view returns (bool) {
+    function isRevealed(CommitType storage c) public view returns (bool) {
         return c.verified;
     }
 

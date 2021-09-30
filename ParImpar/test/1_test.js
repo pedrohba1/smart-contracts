@@ -11,8 +11,8 @@ contract("Testes do ParImpar", async accounts => {
 
     it(`jogadores deveriam ser capazes de escolher par ou ímpar`, async () =>{
         const instance = await ParImpar.deployed();
-        await instance.choosePlay("PAR", {from: accounts[0]});
-        await instance.choosePlay("IMPAR", {from: accounts[1]});
+        await instance.chooseEven({from: accounts[0]});
+        await instance.chooseOdd({from: accounts[1]});
     });
 
     it("Deveria ser possível fazer commit", async () => {

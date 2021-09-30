@@ -10,105 +10,83 @@ contract ParImpar {
     // Even é par
     enum ChosenPlay {
         Even,
-        Odd 
+        Odd,
+        None
     }
 
     struct Participant {
-        address payable _address;
         ChosenPlay playOfChoice;
         bool hasChosen;
+        SimpleCommit.CommitType sc;
+        bool exists;
     }
 
-    Participant participant1;
-    Participant participant2;
     uint256 funds = 0;
-   event Deposit(address indexed _from, string _winner);
-
-
-
     bool ok;
-    SimpleCommit.CommitType sc1;
-    SimpleCommit.CommitType sc2;
+    address payable participant1;
+    address payable participant2;
+    mapping(address  => Participant) participants;
 
     // no deploy do contrato os dois participantes são colocados para 
     // evitar que terceiros participem só para atrapalhar o jogo
-    constructor(address payable _p1, address payable _p2) public {
+    constructor(address payable _address1, address payable _address2) public {
         ok = false;
-        participant1._address = _p1;
-        participant2._address = _p2;
+        participant1 = _address1;
+        SimpleCommit.CommitType memory sc1;
+        participants[_address1] = Participant(
+        {
+            playOfChoice: ChosenPlay.None,
+            hasChosen: false,
+            sc:  sc1,
+            exists: true
+        });
+        participant2 = _address2;
+        SimpleCommit.CommitType memory sc2;
+        participants[_address2] = Participant(
+        {
+            playOfChoice: ChosenPlay.None,
+            hasChosen: false,
+            sc: sc2,
+            exists: true
+        });
     }
 
-      modifier isParticipant {
-        require (msg.sender == participant1._address|| msg.sender == participant2._address,
+    modifier isParticipant {
+        require (participants[msg.sender].exists == true,
          "msg.sender precisa ser um dos particiapntes");
-      _;
+        _;
    }    
     
-    
-    function choosePlay(string memory s) public isParticipant{
-        require(keccak256(abi.encodePacked((s))) ==keccak256(abi.encodePacked(("PAR"))) 
-            || keccak256(abi.encodePacked((s))) == keccak256(abi.encodePacked(("IMPAR"))),
-            "jogadas escolhidas só podem ser PAR ou IMPAR"
-        );      
-        if(keccak256(abi.encodePacked((s))) == keccak256(abi.encodePacked(("PAR")))){
-            if (msg.sender == participant1._address){
-                if(participant2.hasChosen){
-                    require((participant2.playOfChoice != ChosenPlay.Even), 
-                    "participantes não podem escolher o mesmo valor");
-                }
-                participant1.playOfChoice = ChosenPlay.Even;
-                participant1.hasChosen = true;
-            }
-            if (msg.sender == participant2._address){
-                if(participant1.hasChosen){
-                    require(participant1.playOfChoice != ChosenPlay.Even, 
-                    "participantes não podem escolher o mesmo valor");
-                }
-                participant2.playOfChoice = ChosenPlay.Even;
-                participant2.hasChosen = true;
-            }
-        }  
-        if(keccak256(abi.encodePacked((s))) == keccak256(abi.encodePacked(("IMPAR")))){
-            if (msg.sender == participant1._address){
-                if(participant2.hasChosen){
-                    require(participant2.playOfChoice != ChosenPlay.Odd, 
-                    "participantes não podem escolher o mesmo valor");
-                }
-                participant1.playOfChoice = ChosenPlay.Odd;
-                participant1.hasChosen = true;
-            }
-            if (msg.sender == participant2._address){
-                if(participant1.hasChosen){
-                    require(participant1.playOfChoice != ChosenPlay.Odd, 
-                    "participantes não podem escolher o mesmo valor");
-                }
-                participant2.playOfChoice = ChosenPlay.Odd;
-                participant2.hasChosen = true;
-            }
-        }  
+    modifier chooseOnce {
+        require(participants[msg.sender].hasChosen == false, "você não pode mudar sua escolha");
+        _;
     }
 
+    function chooseOdd() public isParticipant chooseOnce {
+
+        participants[msg.sender].playOfChoice = ChosenPlay.Odd;
+        participants[msg.sender].hasChosen = true;
+    } 
+
+    function chooseEven() public isParticipant chooseOnce{
+        participants[msg.sender].playOfChoice = ChosenPlay.Even;        
+        participants[msg.sender].hasChosen = true;
+    }
+
+
     function doCommit(bytes32 h) public payable isParticipant{
-        require(participant1.hasChosen && participant2.hasChosen, 
-        "Ambos participantes precisam ter selecionada um tipo de jogada");
+        require(participants[msg.sender].hasChosen == true, 
+        "O participante precisa ter selecionado uma jogada");
         require(msg.value >0, "pariticpantes devem dar algum valor ao contrato");
-        if (msg.sender == participant1._address){
-            sc1.commit(h);
-        }
-        if (msg.sender == participant2._address){
-            sc2.commit(h);
-        }
+        participants[msg.sender].sc.commit(h);
         funds += msg.value;
     }
     
-    function doReveal( string memory nonce, uint256 v) public isParticipant{
-        if (msg.sender == participant1._address){
-            sc1.reveal(nonce, v);
-        }
-        if (msg.sender == participant2._address){
-            sc2.reveal(nonce,v);
-        }
-        if(sc1.isCorrect() && sc2.isCorrect()){
+    function doReveal( string memory nonce, uint256 val) public isParticipant{
+        participants[msg.sender].sc.reveal(nonce,val);
+        bool revealed1 = participants[participant1].sc.isRevealed();
+        bool revealed2 = participants[participant2].sc.isRevealed();
+        if(revealed1 && revealed2){
             ok = true;
         }
     }
@@ -116,21 +94,24 @@ contract ParImpar {
 
     function distributeFunds() public returns (uint256)  {
         require(ok == true, "os dois commits ainda não foram revelados");
-         uint256 total = sc1.getValue() + sc2.getValue();
+        uint256 val1 =  participants[participant1].sc.getValue();
+        uint256 val2 =  participants[participant2].sc.getValue();
+
+         uint256 total = val1 + val2;
         if (total%2 == 0){
-            if(participant1.playOfChoice == ChosenPlay.Even){
-                participant1._address.transfer(funds);
+            if(participants[participant1].playOfChoice == ChosenPlay.Even){
+                 participant1.transfer(funds);
             }
-            if(participant2.playOfChoice == ChosenPlay.Even){
-                participant2._address.transfer(funds);
+            if(participants[participant2].playOfChoice == ChosenPlay.Even){
+                 participant2.transfer(funds);
             }
         } else {
-            if(participant1.playOfChoice == ChosenPlay.Odd){
-                participant1._address.transfer(funds);
+            if(participants[participant1].playOfChoice == ChosenPlay.Odd){
+                 participant1.transfer(funds);
             }
-            if(participant2.playOfChoice == ChosenPlay.Odd){
-                participant2._address.transfer(funds);
-            }
+            if(participants[participant2].playOfChoice == ChosenPlay.Odd){
+                 participant2.transfer(funds);
+            }  
         }
     }
 
