@@ -14,13 +14,19 @@ contract ParImpar {
         None
     }
 
+    enum GameState {
+        Started,
+        Ended
+    }
+
     struct Participant {
         ChosenPlay playOfChoice;
         bool hasChosen;
         SimpleCommit.CommitType sc;
         bool exists;
     }
-
+    
+    GameState currentState;
     uint256 funds = 0;
     bool ok;
     address payable participant1;
@@ -31,6 +37,7 @@ contract ParImpar {
     // evitar que terceiros participem só para atrapalhar o jogo
     constructor(address payable _address1, address payable _address2) public {
         ok = false;
+        currentState = GameState.Started;
         participant1 = _address1;
         SimpleCommit.CommitType memory sc1;
         participants[_address1] = Participant(
@@ -63,7 +70,6 @@ contract ParImpar {
     }
 
     function chooseOdd() public isParticipant chooseOnce {
-
         participants[msg.sender].playOfChoice = ChosenPlay.Odd;
         participants[msg.sender].hasChosen = true;
     } 
@@ -116,11 +122,11 @@ contract ParImpar {
     }
 
     // eu criei essa função auxiliar para criar a hash direto no solidity e ele me devolver no javascript
-    // acontece que criar uma hash no javascript que seja igual no solidity é um tanto chato, então 
+    // acontece que criar uma hash no javascript que seja igual no solidity é um tanto difícil de fazer, então 
     // isso daqui diminui a dor de cabeça. Fazendo uma call para essa função do tipo pure não vai fazer uma
-    // transaction, a função só será executada no nodo diretamente conectado.
+    // transaction, a função só será executada no node diretamente conectado.
     // Logo, não há o risco de um dos participantes saber os valores do outro, em uma situação normal
-    // onde nenhum dos dois tem acesso ao nodo.
+    // onde nenhum dos dois tem acesso ao node.
     function hashData(string memory nonce, uint256 val ) public pure returns (bytes32) {
         return sha256(abi.encodePacked(nonce, val));
     }
