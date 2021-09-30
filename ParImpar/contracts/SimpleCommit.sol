@@ -13,7 +13,7 @@ library SimpleCommit {
         bool verified;
         CommitStatesType myState;
     }
-
+    
     function commit(CommitType storage c, bytes32 h) public {
         c.commited = h;
         c.participant_address = msg.sender;
