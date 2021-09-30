@@ -13,8 +13,6 @@ contract ParImpar {
         Odd 
     }
 
-
-
     struct Participant {
         address payable _address;
         ChosenPlay playOfChoice;
@@ -116,9 +114,24 @@ contract ParImpar {
     }
 
 
-    function distributeFunds() public view returns (uint256)  {
+    function distributeFunds() public returns (uint256)  {
         require(ok == true, "os dois commits ainda não foram revelados");
          uint256 total = sc1.getValue() + sc2.getValue();
+        if (total%2 == 0){
+            if(participant1.playOfChoice == ChosenPlay.Even){
+                participant1._address.transfer(funds);
+            }
+            if(participant2.playOfChoice == ChosenPlay.Even){
+                participant2._address.transfer(funds);
+            }
+        } else {
+            if(participant1.playOfChoice == ChosenPlay.Odd){
+                participant1._address.transfer(funds);
+            }
+            if(participant2.playOfChoice == ChosenPlay.Odd){
+                participant2._address.transfer(funds);
+            }
+        }
     }
 
     // eu criei essa função auxiliar para criar a hash direto no solidity e ele me devolver no javascript
@@ -134,7 +147,4 @@ contract ParImpar {
     function getResult() public view returns (bool) {
         return ok;
     }
-
-
-
 }
