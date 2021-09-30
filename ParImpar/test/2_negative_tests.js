@@ -11,6 +11,14 @@ contract("Testes negativos do ParImpar", async accounts => {
         console.log(instance.address);
     });
 
+    it(`terceiros não deveriam ser capazes de interagir`, async () =>{
+        const instance = await ParImpar.deployed();
+        truffleAssert.fails(
+            instance.chooseEven({from: accounts[3]}),
+            truffleAssert.ErrorType.REVERT
+        );
+    });
+
     it(`ambos escolherem a mesma jogada não deveria ser possível`, async () =>{
         const instance = await ParImpar.deployed();
         await instance.chooseEven({from: accounts[0]});
