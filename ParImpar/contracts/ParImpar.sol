@@ -50,32 +50,40 @@ contract ParImpar {
     function choosePlay(string memory s) public isParticipant{
         require(keccak256(abi.encodePacked((s))) ==keccak256(abi.encodePacked(("PAR"))) 
             || keccak256(abi.encodePacked((s))) == keccak256(abi.encodePacked(("IMPAR"))),
-            "jogadas escolhidas só podem ser PAR ou ÍMPAR"
+            "jogadas escolhidas só podem ser PAR ou IMPAR"
         );      
         if(keccak256(abi.encodePacked((s))) == keccak256(abi.encodePacked(("PAR")))){
             if (msg.sender == participant1._address){
-                require(participant2.playOfChoice != ChosenPlay.Even, 
-                "participantes não podem escolher o mesmo valor");
+                if(participant2.hasChosen){
+                    require((participant2.playOfChoice != ChosenPlay.Even), 
+                    "participantes não podem escolher o mesmo valor");
+                }
                 participant1.playOfChoice = ChosenPlay.Even;
                 participant1.hasChosen = true;
             }
             if (msg.sender == participant2._address){
-                require(participant1.playOfChoice != ChosenPlay.Even, 
-                "participantes não podem escolher o mesmo valor");
+                if(participant1.hasChosen){
+                    require(participant1.playOfChoice != ChosenPlay.Even, 
+                    "participantes não podem escolher o mesmo valor");
+                }
                 participant2.playOfChoice = ChosenPlay.Even;
                 participant2.hasChosen = true;
             }
         }  
         if(keccak256(abi.encodePacked((s))) == keccak256(abi.encodePacked(("IMPAR")))){
             if (msg.sender == participant1._address){
-                require(participant2.playOfChoice != ChosenPlay.Odd, 
-                "participantes não podem escolher o mesmo valor");
+                if(participant2.hasChosen){
+                    require(participant2.playOfChoice != ChosenPlay.Odd, 
+                    "participantes não podem escolher o mesmo valor");
+                }
                 participant1.playOfChoice = ChosenPlay.Odd;
                 participant1.hasChosen = true;
             }
             if (msg.sender == participant2._address){
-                require(participant1.playOfChoice != ChosenPlay.Odd, 
-                "participantes não podem escolher o mesmo valor");
+                if(participant1.hasChosen){
+                    require(participant1.playOfChoice != ChosenPlay.Odd, 
+                    "participantes não podem escolher o mesmo valor");
+                }
                 participant2.playOfChoice = ChosenPlay.Odd;
                 participant2.hasChosen = true;
             }
