@@ -25,7 +25,6 @@ contract ParImpar {
         bool exists;
     }
     
-    GameState currentState;
     uint256 funds = 0;
     uint256 startTime;
     uint256 endTime;
@@ -43,7 +42,6 @@ contract ParImpar {
         ok = false;
         startTime = _startTime;
         endTime = _endTime;
-        currentState = GameState.Started;
         participant1 = _address1;
         SimpleCommit.CommitType memory sc1;
         participants[_address1] = Participant(
