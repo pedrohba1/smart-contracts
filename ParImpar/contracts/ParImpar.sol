@@ -102,8 +102,30 @@ contract ParImpar {
     }
 
 
-    function distributeFunds() public returns (uint256)  {
-        require(ok == true, "the commits were not revealed yet");
+        
+    modifier ChecksForDistribution {
+        if(!timeHasEmded()){
+            require(ok == true, "the commits were not revealed yet, there is still time");
+        } else {
+            bool hasRevealed1 = participants[participant1].sc.isRevealed();
+            bool hasRevealed2 = participants[participant2].sc.isRevealed();
+
+            if(!hasRevealed1 && !hasRevealed2){
+                revert("o tempo acabou e ninguém pegou o prêmio. Agora ele é do contrato!");
+            }
+            // Nesse caso, quem não revelou não recebe o prêmio. O prêmio vai 
+            // inteiro para quem revelou 
+            if (!hasRevealed1){
+                participant2.transfer(funds);
+            }
+            if (!hasRevealed2){
+                participant1.transfer(funds);
+            }
+        }
+        _;
+    }
+
+    function distributeFunds() public ChecksForDistribution returns (uint256)  {
         uint256 val1 =  participants[participant1].sc.getValue();
         uint256 val2 =  participants[participant2].sc.getValue();
 
@@ -135,7 +157,7 @@ contract ParImpar {
         return sha256(abi.encodePacked(nonce, val));
     }
     
-    function hasEnded() private view returns (bool){
+    function timeHasEmded() private view returns (bool){
         return (block.timestamp >= endTime);
     }
 
