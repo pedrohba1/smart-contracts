@@ -3,8 +3,7 @@ pragma solidity >=0.4.25 <0.6.0;
 import "./SimpleCommit.sol";
 
 contract ParImpar {
-    using SimpleCommit for SimpleCommit.CommitType;
-   
+    using SimpleCommit for SimpleCommit.CommitType;    
     // Para não esquecer qual é qual:
     //Odd é ímpar
     // Even é par
@@ -28,6 +27,8 @@ contract ParImpar {
     
     GameState currentState;
     uint256 funds = 0;
+    uint256 startTime;
+    uint256 endTime;
     bool ok;
     address payable participant1;
     address payable participant2;
@@ -35,8 +36,13 @@ contract ParImpar {
 
     // no deploy do contrato os dois participantes são colocados para 
     // evitar que terceiros participem só para atrapalhar o jogo
-    constructor(address payable _address1, address payable _address2) public {
+    constructor( address payable _address1, 
+                 address payable _address2,
+                 uint256 _startTime,
+                 uint256 _endTime)  public {
         ok = false;
+        startTime = _startTime;
+        endTime = _endTime;
         currentState = GameState.Started;
         participant1 = _address1;
         SimpleCommit.CommitType memory sc1;
@@ -131,6 +137,10 @@ contract ParImpar {
         return sha256(abi.encodePacked(nonce, val));
     }
     
+    function hasEnded() private view returns (bool){
+        return (block.timestamp >= endTime);
+    }
+
     function getResult() public view returns (bool) {
         return ok;
     }
