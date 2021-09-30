@@ -2,7 +2,7 @@ pragma solidity >=0.4.25 <0.6.0;
 
 import "./SimpleCommit.sol";
 
-contract ParImpar {
+contract EvenOddGame {
     using SimpleCommit for SimpleCommit.CommitType;    
     // Para não esquecer qual é qual:
     //Odd é ímpar

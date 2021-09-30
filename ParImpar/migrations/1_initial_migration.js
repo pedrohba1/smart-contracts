@@ -1,11 +1,11 @@
 const SimpleCommit = artifacts.require("SimpleCommit");
-const ParImpar = artifacts.require("ParImpar");
+const EvenOddGame = artifacts.require("EvenOddGame");
 
 module.exports = function (deployer, network, accounts) {
   startTime = Date.now();
   endTime = startTime + 10000;
 
   deployer.deploy(SimpleCommit);
-  deployer.link(SimpleCommit, ParImpar);
-  deployer.deploy(ParImpar, accounts[0], accounts[1], startTime, endTime);
+  deployer.link(SimpleCommit, EvenOddGame);
+  deployer.deploy(EvenOddGame, accounts[0], accounts[1], startTime, endTime);
 };
