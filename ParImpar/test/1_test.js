@@ -13,7 +13,6 @@ contract("Testes do ParImpar", async accounts => {
         const instance = await ParImpar.deployed();
         await instance.choosePlay("PAR", {from: accounts[0]});
         await instance.choosePlay("IMPAR", {from: accounts[1]});
-
     });
 
     it("Deveria ser possível fazer commit", async () => {
@@ -34,12 +33,20 @@ contract("Testes do ParImpar", async accounts => {
     it("Variável ok deveria ser true", async() =>{
         const instance = await ParImpar.deployed();
         const res = await instance.getResult.call();
-        console.log(res);
+        assert.equal(res, true);
     });
 
     it("Deveria transferir fundos adequadamente", async() =>{
         const instance = await ParImpar.deployed();
-        const res = await instance.distributeFunds.call();
-        console.log(res.toString());
+        //nesse caso quem ganhou foi o accounts[1] porque ele apostou impar.
+        const prevWalletBalance = await web3.eth.getBalance(accounts[1]);
+        console.log('balanço antes', prevWalletBalance)
+        await instance.distributeFunds();
+        walletBalance = await web3.eth.getBalance(accounts[1]);
+        console.log('balanço depois da distribuição', walletBalance);
+        var difference = walletBalance - prevWalletBalance;
+        difference = web3.utils.fromWei(difference.toString(), 'ether');
+        console.log('diferença entre antes e depois em ether', difference);
+        assert.equal(difference, 2);
     });
 });
