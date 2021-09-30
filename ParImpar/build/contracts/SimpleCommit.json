@@ -1,0 +1,4189 @@
+{
+  "contractName": "SimpleCommit",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "val",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "nonce",
+          "type": "string"
+        }
+      ],
+      "name": "hashData",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"string\",\"name\":\"val\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"nonce\",\"type\":\"string\"}],\"name\":\"hashData\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/SimpleCommit.sol\":\"SimpleCommit\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/SimpleCommit.sol\":{\"keccak256\":\"0x475660f6ff6ffe0a166d5d02492bed27e416a9e87d94afeef2b814ce1b5d70bc\",\"urls\":[\"bzz-raw://a6390c9c1b0416bea18607a6f1fe49821539d3d6e30debe775f0d82e3c938216\",\"dweb:/ipfs/QmUo6QNFSZ22S2zKkMpFHoSiedcqK4NRUcQkiYjhFFqo2G\"]}},\"version\":1}",
+  "bytecode": "0x6107a9610026600b82828239805160001a60731461001957fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600436106100605760003560e01c80623a471d1461006557806335c436e4146100aa57806361f7bb291461021057806391cc8ba014610256578063ec01d198146102dc575b600080fd5b81801561007157600080fd5b506100a86004803603604081101561008857600080fd5b81019080803590602001909291908035906020019092919050505061034d565b005b6101fa600480360360408110156100c057600080fd5b81019080803590602001906401000000008111156100dd57600080fd5b8201836020820111156100ef57600080fd5b8035906020019184600183028401116401000000008311171561011157600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561017457600080fd5b82018360208201111561018657600080fd5b803590602001918460018302840111640100000000831117156101a857600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929050505061039d565b6040518082815260200191505060405180910390f35b61023c6004803603602081101561022657600080fd5b8101908080359060200190929190505050610502565b604051808215151515815260200191505060405180910390f35b6102826004803603602081101561026c57600080fd5b8101908080359060200190929190505050610550565b60405180827effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200191505060405180910390f35b8180156102e857600080fd5b5061034b600480360360608110156102ff57600080fd5b81019080803590602001909291908035906020019092919080357effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff191690602001909291905050506105c0565b005b80826000018190555060008260010160016101000a81548160ff02191690831515021790555060008260010160026101000a81548160ff0219169083600181111561039457fe5b02179055505050565b6000600282846040516020018083805190602001908083835b602083106103d957805182526020820191506020810190506020830392506103b6565b6001836020036101000a03801982511681845116808217855250505050505090500182805190602001908083835b6020831061042a5780518252602082019150602081019050602083039250610407565b6001836020036101000a038019825116818451168082178552505050505050905001925050506040516020818303038152906040526040518082805190602001908083835b60208310610492578051825260208201915060208101905060208303925061046f565b6001836020036101000a038019825116818451168082178552505050505050905001915050602060405180830381855afa1580156104d4573d6000803e3d6000fd5b5050506040513d60208110156104e957600080fd5b8101908080519060200190929190505050905092915050565b600060018081111561051057fe5b8260010160029054906101000a900460ff16600181111561052d57fe5b1461053757600080fd5b8160010160019054906101000a900460ff169050919050565b600060018081111561055e57fe5b8260010160029054906101000a900460ff16600181111561057b57fe5b1461058557600080fd5b600115158260010160019054906101000a900460ff161515146105a757600080fd5b8160010160009054906101000a900460f81b9050919050565b600060018111156105cd57fe5b8360010160029054906101000a900460ff1660018111156105ea57fe5b146105f457600080fd5b60006002838360405160200180838152602001827effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff19168152600101925050506040516020818303038152906040526040518082805190602001908083835b602083106106975780518252602082019150602081019050602083039250610674565b6001836020036101000a038019825116818451168082178552505050505050905001915050602060405180830381855afa1580156106d9573d6000803e3d6000fd5b5050506040513d60208110156106ee57600080fd5b8101908080519060200190929190505050905060018460010160026101000a81548160ff0219169083600181111561072257fe5b0217905550836000015481141561076e5760018460010160016101000a81548160ff021916908315150217905550818460010160006101000a81548160ff021916908360f81c02179055505b5050505056fea265627a7a723158204cc128279e2e9f82566af8d004a0c3e319f3c2a5d0d4c0755c00e205c06920a264736f6c63430005100032",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600436106100605760003560e01c80623a471d1461006557806335c436e4146100aa57806361f7bb291461021057806391cc8ba014610256578063ec01d198146102dc575b600080fd5b81801561007157600080fd5b506100a86004803603604081101561008857600080fd5b81019080803590602001909291908035906020019092919050505061034d565b005b6101fa600480360360408110156100c057600080fd5b81019080803590602001906401000000008111156100dd57600080fd5b8201836020820111156100ef57600080fd5b8035906020019184600183028401116401000000008311171561011157600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561017457600080fd5b82018360208201111561018657600080fd5b803590602001918460018302840111640100000000831117156101a857600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929050505061039d565b6040518082815260200191505060405180910390f35b61023c6004803603602081101561022657600080fd5b8101908080359060200190929190505050610502565b604051808215151515815260200191505060405180910390f35b6102826004803603602081101561026c57600080fd5b8101908080359060200190929190505050610550565b60405180827effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200191505060405180910390f35b8180156102e857600080fd5b5061034b600480360360608110156102ff57600080fd5b81019080803590602001909291908035906020019092919080357effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff191690602001909291905050506105c0565b005b80826000018190555060008260010160016101000a81548160ff02191690831515021790555060008260010160026101000a81548160ff0219169083600181111561039457fe5b02179055505050565b6000600282846040516020018083805190602001908083835b602083106103d957805182526020820191506020810190506020830392506103b6565b6001836020036101000a03801982511681845116808217855250505050505090500182805190602001908083835b6020831061042a5780518252602082019150602081019050602083039250610407565b6001836020036101000a038019825116818451168082178552505050505050905001925050506040516020818303038152906040526040518082805190602001908083835b60208310610492578051825260208201915060208101905060208303925061046f565b6001836020036101000a038019825116818451168082178552505050505050905001915050602060405180830381855afa1580156104d4573d6000803e3d6000fd5b5050506040513d60208110156104e957600080fd5b8101908080519060200190929190505050905092915050565b600060018081111561051057fe5b8260010160029054906101000a900460ff16600181111561052d57fe5b1461053757600080fd5b8160010160019054906101000a900460ff169050919050565b600060018081111561055e57fe5b8260010160029054906101000a900460ff16600181111561057b57fe5b1461058557600080fd5b600115158260010160019054906101000a900460ff161515146105a757600080fd5b8160010160009054906101000a900460f81b9050919050565b600060018111156105cd57fe5b8360010160029054906101000a900460ff1660018111156105ea57fe5b146105f457600080fd5b60006002838360405160200180838152602001827effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff19168152600101925050506040516020818303038152906040526040518082805190602001908083835b602083106106975780518252602082019150602081019050602083039250610674565b6001836020036101000a038019825116818451168082178552505050505050905001915050602060405180830381855afa1580156106d9573d6000803e3d6000fd5b5050506040513d60208110156106ee57600080fd5b8101908080519060200190929190505050905060018460010160026101000a81548160ff0219169083600181111561072257fe5b0217905550836000015481141561076e5760018460010160016101000a81548160ff021916908315150217905550818460010160006101000a81548160ff021916908360f81c02179055505b5050505056fea265627a7a723158204cc128279e2e9f82566af8d004a0c3e319f3c2a5d0d4c0755c00e205c06920a264736f6c63430005100032",
+  "sourceMap": "34:1292:1:-;;132:2:-1;166:7;155:9;146:7;137:37;255:7;249:14;246:1;241:23;235:4;232:33;222:2;;269:9;222:2;293:9;290:1;283:20;323:4;314:7;306:22;347:7;338;331:24",
+  "deployedSourceMap": "34:1292:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;266:161;;8:9:-1;5:2;;;30:1;27;20:12;5:2;266:161:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;266:161:1;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;807:148;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;807:148:1;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;807:148:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;807:148:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;807:148:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;807:148:1;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;807:148:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;807:148:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;807:148:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;807:148:1;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;965:159;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;965:159:1;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1130:194;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1130:194:1;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;433:367;;8:9:-1;5:2;;;30:1;27;20:12;5:2;433:367:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;433:367:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;266:161;345:1;332;:10;;:14;;;;369:5;356:1;:10;;;:18;;;;;;;;;;;;;;;;;;396:24;384:1;:9;;;:36;;;;;;;;;;;;;;;;;;;;;;;;266:161;;:::o;807:148::-;886:7;912:36;936:5;943:3;919:28;;;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;36:153;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;919:28:1;;;;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;36:153;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;919:28:1;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;919:28:1;;;912:36;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;36:153;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;912:36:1;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;912:36:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;912:36:1;;;;;;;;;;;;;;;;905:43;;807:148;;;;:::o;965:159::-;1027:4;1064:25;1051:38;;;;;;;;:1;:9;;;;;;;;;;;;:38;;;;;;;;;1043:47;;;;;;1107:1;:10;;;;;;;;;;;;1100:17;;965:159;;;:::o;1130:194::-;1191:6;1230:25;1217:38;;;;;;;;:1;:9;;;;;;;;;;;;:38;;;;;;;;;1209:47;;;;;;1288:4;1274:18;;:1;:10;;;;;;;;;;;;:18;;;1266:27;;;;;;1310:1;:7;;;;;;;;;;;;1303:14;;1130:194;;;:::o;433:367::-;564:24;551:37;;;;;;;;:1;:9;;;;;;;;;;;;:37;;;;;;;;;543:46;;;;;;599:11;613:34;637:5;644:1;620:26;;;;;;;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;620:26:1;;;613:34;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;36:153;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;613:34:1;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;613:34:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;613:34:1;;;;;;;;;;;;;;;;599:48;;669:25;657:1;:9;;;:37;;;;;;;;;;;;;;;;;;;;;;;;715:1;:10;;;708:3;:17;704:90;;;754:4;741:1;:10;;;:17;;;;;;;;;;;;;;;;;;782:1;772;:7;;;:11;;;;;;;;;;;;;;;;;;704:90;433:367;;;;:::o",
+  "source": "pragma solidity >=0.4.25 <0.6.0;\n\nlibrary SimpleCommit {\n    enum CommitStatesType {\n        Waiting,\n        Revealed\n    }\n\n    struct CommitType {\n        bytes32 commited;\n        bytes1 value;\n        bool verified;\n        CommitStatesType myState;\n    }\n\n    function commit(CommitType storage c, bytes32 h) public {\n        c.commited = h;\n        c.verified = false;\n        c.myState = CommitStatesType.Waiting;\n    }\n\n    function reveal(\n        CommitType storage c,\n        bytes32 nonce,\n        bytes1 v\n    ) public {\n        require(c.myState == CommitStatesType.Waiting);\n        bytes32 ver = sha256(abi.encodePacked(nonce, v));\n        c.myState = CommitStatesType.Revealed;\n        if (ver == c.commited) {\n            c.verified = true;\n            c.value = v;\n        }\n    }\n\n\n    function hashData(string memory val, string memory nonce) public pure returns (bytes32) {\n        return sha256(abi.encodePacked(nonce, val));\n    }\n    \n    function isCorrect(CommitType storage c) public view returns (bool) {\n        require(c.myState == CommitStatesType.Revealed);\n        return c.verified;\n    }\n\n    function getValue(CommitType storage c) public view returns (bytes1) {\n        require(c.myState == CommitStatesType.Revealed);\n        require(c.verified == true);\n        return c.value;\n    }\n}\n\n\n",
+  "sourcePath": "/home/bufulin/Documents/Personal Codes/smart-contracts/ParImpar/contracts/SimpleCommit.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/SimpleCommit.sol",
+    "exportedSymbols": {
+      "SimpleCommit": [
+        213
+      ]
+    },
+    "id": 214,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 57,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".25",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 213,
+        "linearizedBaseContracts": [
+          213
+        ],
+        "name": "SimpleCommit",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "SimpleCommit.CommitStatesType",
+            "id": 60,
+            "members": [
+              {
+                "id": 58,
+                "name": "Waiting",
+                "nodeType": "EnumValue",
+                "src": "93:7:1"
+              },
+              {
+                "id": 59,
+                "name": "Revealed",
+                "nodeType": "EnumValue",
+                "src": "110:8:1"
+              }
+            ],
+            "name": "CommitStatesType",
+            "nodeType": "EnumDefinition",
+            "src": "61:63:1"
+          },
+          {
+            "canonicalName": "SimpleCommit.CommitType",
+            "id": 69,
+            "members": [
+              {
+                "constant": false,
+                "id": 62,
+                "name": "commited",
+                "nodeType": "VariableDeclaration",
+                "scope": 69,
+                "src": "158:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 61,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "158:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 64,
+                "name": "value",
+                "nodeType": "VariableDeclaration",
+                "scope": 69,
+                "src": "184:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes1",
+                  "typeString": "bytes1"
+                },
+                "typeName": {
+                  "id": 63,
+                  "name": "bytes1",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "184:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes1",
+                    "typeString": "bytes1"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 66,
+                "name": "verified",
+                "nodeType": "VariableDeclaration",
+                "scope": 69,
+                "src": "206:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 65,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "206:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 68,
+                "name": "myState",
+                "nodeType": "VariableDeclaration",
+                "scope": 69,
+                "src": "229:24:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                  "typeString": "enum SimpleCommit.CommitStatesType"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 67,
+                  "name": "CommitStatesType",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 60,
+                  "src": "229:16:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                    "typeString": "enum SimpleCommit.CommitStatesType"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "CommitType",
+            "nodeType": "StructDefinition",
+            "scope": 213,
+            "src": "130:130:1",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 95,
+              "nodeType": "Block",
+              "src": "322:105:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 80,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 76,
+                        "name": "c",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 71,
+                        "src": "332:1:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                          "typeString": "struct SimpleCommit.CommitType storage pointer"
+                        }
+                      },
+                      "id": 78,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "commited",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 62,
+                      "src": "332:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 79,
+                      "name": "h",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 73,
+                      "src": "345:1:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "332:14:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 81,
+                  "nodeType": "ExpressionStatement",
+                  "src": "332:14:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 86,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 82,
+                        "name": "c",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 71,
+                        "src": "356:1:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                          "typeString": "struct SimpleCommit.CommitType storage pointer"
+                        }
+                      },
+                      "id": 84,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "verified",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 66,
+                      "src": "356:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "66616c7365",
+                      "id": 85,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "369:5:1",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "false"
+                    },
+                    "src": "356:18:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 87,
+                  "nodeType": "ExpressionStatement",
+                  "src": "356:18:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 93,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 88,
+                        "name": "c",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 71,
+                        "src": "384:1:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                          "typeString": "struct SimpleCommit.CommitType storage pointer"
+                        }
+                      },
+                      "id": 90,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "myState",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 68,
+                      "src": "384:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                        "typeString": "enum SimpleCommit.CommitStatesType"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 91,
+                        "name": "CommitStatesType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 60,
+                        "src": "396:16:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_CommitStatesType_$60_$",
+                          "typeString": "type(enum SimpleCommit.CommitStatesType)"
+                        }
+                      },
+                      "id": 92,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Waiting",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "396:24:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                        "typeString": "enum SimpleCommit.CommitStatesType"
+                      }
+                    },
+                    "src": "384:36:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                      "typeString": "enum SimpleCommit.CommitStatesType"
+                    }
+                  },
+                  "id": 94,
+                  "nodeType": "ExpressionStatement",
+                  "src": "384:36:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 96,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "commit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 74,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71,
+                  "name": "c",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 96,
+                  "src": "282:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                    "typeString": "struct SimpleCommit.CommitType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 70,
+                    "name": "CommitType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 69,
+                    "src": "282:10:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                      "typeString": "struct SimpleCommit.CommitType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 73,
+                  "name": "h",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 96,
+                  "src": "304:9:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 72,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "304:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "281:33:1"
+            },
+            "returnParameters": {
+              "id": 75,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "322:0:1"
+            },
+            "scope": 213,
+            "src": "266:161:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 148,
+              "nodeType": "Block",
+              "src": "533:267:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                          "typeString": "enum SimpleCommit.CommitStatesType"
+                        },
+                        "id": 110,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 106,
+                            "name": "c",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 98,
+                            "src": "551:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                              "typeString": "struct SimpleCommit.CommitType storage pointer"
+                            }
+                          },
+                          "id": 107,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "myState",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 68,
+                          "src": "551:9:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                            "typeString": "enum SimpleCommit.CommitStatesType"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 108,
+                            "name": "CommitStatesType",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 60,
+                            "src": "564:16:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_enum$_CommitStatesType_$60_$",
+                              "typeString": "type(enum SimpleCommit.CommitStatesType)"
+                            }
+                          },
+                          "id": 109,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "Waiting",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "564:24:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                            "typeString": "enum SimpleCommit.CommitStatesType"
+                          }
+                        },
+                        "src": "551:37:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 105,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        231,
+                        232
+                      ],
+                      "referencedDeclaration": 231,
+                      "src": "543:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 111,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "543:46:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 112,
+                  "nodeType": "ExpressionStatement",
+                  "src": "543:46:1"
+                },
+                {
+                  "assignments": [
+                    114
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 114,
+                      "name": "ver",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 148,
+                      "src": "599:11:1",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      },
+                      "typeName": {
+                        "id": 113,
+                        "name": "bytes32",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "599:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 122,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 118,
+                            "name": "nonce",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 100,
+                            "src": "637:5:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 119,
+                            "name": "v",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 102,
+                            "src": "644:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes1",
+                              "typeString": "bytes1"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            },
+                            {
+                              "typeIdentifier": "t_bytes1",
+                              "typeString": "bytes1"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 116,
+                            "name": "abi",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 215,
+                            "src": "620:3:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_abi",
+                              "typeString": "abi"
+                            }
+                          },
+                          "id": 117,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "encodePacked",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "620:16:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
+                            "typeString": "function () pure returns (bytes memory)"
+                          }
+                        },
+                        "id": 120,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "620:26:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      ],
+                      "id": 115,
+                      "name": "sha256",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 237,
+                      "src": "613:6:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_sha256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                        "typeString": "function (bytes memory) pure returns (bytes32)"
+                      }
+                    },
+                    "id": 121,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "613:34:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "599:48:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 128,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 123,
+                        "name": "c",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 98,
+                        "src": "657:1:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                          "typeString": "struct SimpleCommit.CommitType storage pointer"
+                        }
+                      },
+                      "id": 125,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "myState",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 68,
+                      "src": "657:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                        "typeString": "enum SimpleCommit.CommitStatesType"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 126,
+                        "name": "CommitStatesType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 60,
+                        "src": "669:16:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_CommitStatesType_$60_$",
+                          "typeString": "type(enum SimpleCommit.CommitStatesType)"
+                        }
+                      },
+                      "id": 127,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Revealed",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "669:25:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                        "typeString": "enum SimpleCommit.CommitStatesType"
+                      }
+                    },
+                    "src": "657:37:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                      "typeString": "enum SimpleCommit.CommitStatesType"
+                    }
+                  },
+                  "id": 129,
+                  "nodeType": "ExpressionStatement",
+                  "src": "657:37:1"
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    },
+                    "id": 133,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 130,
+                      "name": "ver",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 114,
+                      "src": "708:3:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 131,
+                        "name": "c",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 98,
+                        "src": "715:1:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                          "typeString": "struct SimpleCommit.CommitType storage pointer"
+                        }
+                      },
+                      "id": 132,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "commited",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 62,
+                      "src": "715:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "708:17:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 147,
+                  "nodeType": "IfStatement",
+                  "src": "704:90:1",
+                  "trueBody": {
+                    "id": 146,
+                    "nodeType": "Block",
+                    "src": "727:67:1",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 138,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 134,
+                              "name": "c",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 98,
+                              "src": "741:1:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                                "typeString": "struct SimpleCommit.CommitType storage pointer"
+                              }
+                            },
+                            "id": 136,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "verified",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 66,
+                            "src": "741:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "hexValue": "74727565",
+                            "id": 137,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "bool",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "754:4:1",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            },
+                            "value": "true"
+                          },
+                          "src": "741:17:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "id": 139,
+                        "nodeType": "ExpressionStatement",
+                        "src": "741:17:1"
+                      },
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 144,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 140,
+                              "name": "c",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 98,
+                              "src": "772:1:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                                "typeString": "struct SimpleCommit.CommitType storage pointer"
+                              }
+                            },
+                            "id": 142,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "value",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 64,
+                            "src": "772:7:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes1",
+                              "typeString": "bytes1"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 143,
+                            "name": "v",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 102,
+                            "src": "782:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes1",
+                              "typeString": "bytes1"
+                            }
+                          },
+                          "src": "772:11:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes1",
+                            "typeString": "bytes1"
+                          }
+                        },
+                        "id": 145,
+                        "nodeType": "ExpressionStatement",
+                        "src": "772:11:1"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 149,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "reveal",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 103,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 98,
+                  "name": "c",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 149,
+                  "src": "458:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                    "typeString": "struct SimpleCommit.CommitType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 97,
+                    "name": "CommitType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 69,
+                    "src": "458:10:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                      "typeString": "struct SimpleCommit.CommitType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 100,
+                  "name": "nonce",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 149,
+                  "src": "488:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 99,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "488:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 102,
+                  "name": "v",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 149,
+                  "src": "511:8:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes1",
+                    "typeString": "bytes1"
+                  },
+                  "typeName": {
+                    "id": 101,
+                    "name": "bytes1",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "511:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes1",
+                      "typeString": "bytes1"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "448:77:1"
+            },
+            "returnParameters": {
+              "id": 104,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "533:0:1"
+            },
+            "scope": 213,
+            "src": "433:367:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 166,
+              "nodeType": "Block",
+              "src": "895:60:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 161,
+                            "name": "nonce",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 153,
+                            "src": "936:5:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 162,
+                            "name": "val",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 151,
+                            "src": "943:3:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            },
+                            {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 159,
+                            "name": "abi",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 215,
+                            "src": "919:3:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_abi",
+                              "typeString": "abi"
+                            }
+                          },
+                          "id": 160,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "encodePacked",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "919:16:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
+                            "typeString": "function () pure returns (bytes memory)"
+                          }
+                        },
+                        "id": 163,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "919:28:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      ],
+                      "id": 158,
+                      "name": "sha256",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 237,
+                      "src": "912:6:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_sha256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                        "typeString": "function (bytes memory) pure returns (bytes32)"
+                      }
+                    },
+                    "id": 164,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "912:36:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 157,
+                  "id": 165,
+                  "nodeType": "Return",
+                  "src": "905:43:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 167,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "hashData",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 154,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 151,
+                  "name": "val",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 167,
+                  "src": "825:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 150,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "825:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 153,
+                  "name": "nonce",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 167,
+                  "src": "844:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 152,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "844:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "824:40:1"
+            },
+            "returnParameters": {
+              "id": 157,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 156,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 167,
+                  "src": "886:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 155,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "886:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "885:9:1"
+            },
+            "scope": 213,
+            "src": "807:148:1",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 185,
+              "nodeType": "Block",
+              "src": "1033:91:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                          "typeString": "enum SimpleCommit.CommitStatesType"
+                        },
+                        "id": 179,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 175,
+                            "name": "c",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 169,
+                            "src": "1051:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                              "typeString": "struct SimpleCommit.CommitType storage pointer"
+                            }
+                          },
+                          "id": 176,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "myState",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 68,
+                          "src": "1051:9:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                            "typeString": "enum SimpleCommit.CommitStatesType"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 177,
+                            "name": "CommitStatesType",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 60,
+                            "src": "1064:16:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_enum$_CommitStatesType_$60_$",
+                              "typeString": "type(enum SimpleCommit.CommitStatesType)"
+                            }
+                          },
+                          "id": 178,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "Revealed",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1064:25:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                            "typeString": "enum SimpleCommit.CommitStatesType"
+                          }
+                        },
+                        "src": "1051:38:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 174,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        231,
+                        232
+                      ],
+                      "referencedDeclaration": 231,
+                      "src": "1043:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 180,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1043:47:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 181,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1043:47:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 182,
+                      "name": "c",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 169,
+                      "src": "1107:1:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                        "typeString": "struct SimpleCommit.CommitType storage pointer"
+                      }
+                    },
+                    "id": 183,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "verified",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 66,
+                    "src": "1107:10:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 173,
+                  "id": 184,
+                  "nodeType": "Return",
+                  "src": "1100:17:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 186,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isCorrect",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 170,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 169,
+                  "name": "c",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 186,
+                  "src": "984:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                    "typeString": "struct SimpleCommit.CommitType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 168,
+                    "name": "CommitType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 69,
+                    "src": "984:10:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                      "typeString": "struct SimpleCommit.CommitType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "983:22:1"
+            },
+            "returnParameters": {
+              "id": 173,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 172,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 186,
+                  "src": "1027:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 171,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1027:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1026:6:1"
+            },
+            "scope": 213,
+            "src": "965:159:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 211,
+              "nodeType": "Block",
+              "src": "1199:125:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                          "typeString": "enum SimpleCommit.CommitStatesType"
+                        },
+                        "id": 198,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 194,
+                            "name": "c",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 188,
+                            "src": "1217:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                              "typeString": "struct SimpleCommit.CommitType storage pointer"
+                            }
+                          },
+                          "id": 195,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "myState",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 68,
+                          "src": "1217:9:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                            "typeString": "enum SimpleCommit.CommitStatesType"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 196,
+                            "name": "CommitStatesType",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 60,
+                            "src": "1230:16:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_enum$_CommitStatesType_$60_$",
+                              "typeString": "type(enum SimpleCommit.CommitStatesType)"
+                            }
+                          },
+                          "id": 197,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "Revealed",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1230:25:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                            "typeString": "enum SimpleCommit.CommitStatesType"
+                          }
+                        },
+                        "src": "1217:38:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 193,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        231,
+                        232
+                      ],
+                      "referencedDeclaration": 231,
+                      "src": "1209:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 199,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1209:47:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 200,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1209:47:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 205,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 202,
+                            "name": "c",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 188,
+                            "src": "1274:1:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                              "typeString": "struct SimpleCommit.CommitType storage pointer"
+                            }
+                          },
+                          "id": 203,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "verified",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 66,
+                          "src": "1274:10:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "74727565",
+                          "id": 204,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1288:4:1",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "true"
+                        },
+                        "src": "1274:18:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 201,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        231,
+                        232
+                      ],
+                      "referencedDeclaration": 231,
+                      "src": "1266:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 206,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1266:27:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 207,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1266:27:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 208,
+                      "name": "c",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 188,
+                      "src": "1310:1:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                        "typeString": "struct SimpleCommit.CommitType storage pointer"
+                      }
+                    },
+                    "id": 209,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "value",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 64,
+                    "src": "1310:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes1",
+                      "typeString": "bytes1"
+                    }
+                  },
+                  "functionReturnParameters": 192,
+                  "id": 210,
+                  "nodeType": "Return",
+                  "src": "1303:14:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 212,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getValue",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 189,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 188,
+                  "name": "c",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 212,
+                  "src": "1148:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                    "typeString": "struct SimpleCommit.CommitType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 187,
+                    "name": "CommitType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 69,
+                    "src": "1148:10:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_CommitType_$69_storage_ptr",
+                      "typeString": "struct SimpleCommit.CommitType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1147:22:1"
+            },
+            "returnParameters": {
+              "id": 192,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 191,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 212,
+                  "src": "1191:6:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes1",
+                    "typeString": "bytes1"
+                  },
+                  "typeName": {
+                    "id": 190,
+                    "name": "bytes1",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1191:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes1",
+                      "typeString": "bytes1"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1190:8:1"
+            },
+            "scope": 213,
+            "src": "1130:194:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 214,
+        "src": "34:1292:1"
+      }
+    ],
+    "src": "0:1329:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/SimpleCommit.sol",
+      "exportedSymbols": {
+        "SimpleCommit": [
+          213
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".25",
+            "<",
+            "0.6",
+            ".0"
+          ]
+        },
+        "id": 57,
+        "name": "PragmaDirective",
+        "src": "0:32:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "library",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            213
+          ],
+          "name": "SimpleCommit",
+          "scope": 214
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "SimpleCommit.CommitStatesType",
+              "name": "CommitStatesType"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "Waiting"
+                },
+                "id": 58,
+                "name": "EnumValue",
+                "src": "93:7:1"
+              },
+              {
+                "attributes": {
+                  "name": "Revealed"
+                },
+                "id": 59,
+                "name": "EnumValue",
+                "src": "110:8:1"
+              }
+            ],
+            "id": 60,
+            "name": "EnumDefinition",
+            "src": "61:63:1"
+          },
+          {
+            "attributes": {
+              "canonicalName": "SimpleCommit.CommitType",
+              "name": "CommitType",
+              "scope": 213,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "commited",
+                  "scope": 69,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "bytes32",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bytes32",
+                      "type": "bytes32"
+                    },
+                    "id": 61,
+                    "name": "ElementaryTypeName",
+                    "src": "158:7:1"
+                  }
+                ],
+                "id": 62,
+                "name": "VariableDeclaration",
+                "src": "158:16:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "value",
+                  "scope": 69,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "bytes1",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bytes1",
+                      "type": "bytes1"
+                    },
+                    "id": 63,
+                    "name": "ElementaryTypeName",
+                    "src": "184:6:1"
+                  }
+                ],
+                "id": 64,
+                "name": "VariableDeclaration",
+                "src": "184:12:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "verified",
+                  "scope": 69,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "bool",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bool",
+                      "type": "bool"
+                    },
+                    "id": 65,
+                    "name": "ElementaryTypeName",
+                    "src": "206:4:1"
+                  }
+                ],
+                "id": 66,
+                "name": "VariableDeclaration",
+                "src": "206:13:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "myState",
+                  "scope": 69,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "enum SimpleCommit.CommitStatesType",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "CommitStatesType",
+                      "referencedDeclaration": 60,
+                      "type": "enum SimpleCommit.CommitStatesType"
+                    },
+                    "id": 67,
+                    "name": "UserDefinedTypeName",
+                    "src": "229:16:1"
+                  }
+                ],
+                "id": 68,
+                "name": "VariableDeclaration",
+                "src": "229:24:1"
+              }
+            ],
+            "id": 69,
+            "name": "StructDefinition",
+            "src": "130:130:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "commit",
+              "scope": 213,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "c",
+                      "scope": 96,
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "type": "struct SimpleCommit.CommitType",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "CommitType",
+                          "referencedDeclaration": 69,
+                          "type": "struct SimpleCommit.CommitType"
+                        },
+                        "id": 70,
+                        "name": "UserDefinedTypeName",
+                        "src": "282:10:1"
+                      }
+                    ],
+                    "id": 71,
+                    "name": "VariableDeclaration",
+                    "src": "282:20:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "h",
+                      "scope": 96,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 72,
+                        "name": "ElementaryTypeName",
+                        "src": "304:7:1"
+                      }
+                    ],
+                    "id": 73,
+                    "name": "VariableDeclaration",
+                    "src": "304:9:1"
+                  }
+                ],
+                "id": 74,
+                "name": "ParameterList",
+                "src": "281:33:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 75,
+                "name": "ParameterList",
+                "src": "322:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "bytes32"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "commited",
+                              "referencedDeclaration": 62,
+                              "type": "bytes32"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 71,
+                                  "type": "struct SimpleCommit.CommitType storage pointer",
+                                  "value": "c"
+                                },
+                                "id": 76,
+                                "name": "Identifier",
+                                "src": "332:1:1"
+                              }
+                            ],
+                            "id": 78,
+                            "name": "MemberAccess",
+                            "src": "332:10:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 73,
+                              "type": "bytes32",
+                              "value": "h"
+                            },
+                            "id": 79,
+                            "name": "Identifier",
+                            "src": "345:1:1"
+                          }
+                        ],
+                        "id": 80,
+                        "name": "Assignment",
+                        "src": "332:14:1"
+                      }
+                    ],
+                    "id": 81,
+                    "name": "ExpressionStatement",
+                    "src": "332:14:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "verified",
+                              "referencedDeclaration": 66,
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 71,
+                                  "type": "struct SimpleCommit.CommitType storage pointer",
+                                  "value": "c"
+                                },
+                                "id": 82,
+                                "name": "Identifier",
+                                "src": "356:1:1"
+                              }
+                            ],
+                            "id": 84,
+                            "name": "MemberAccess",
+                            "src": "356:10:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "66616c7365",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "bool",
+                              "type": "bool",
+                              "value": "false"
+                            },
+                            "id": 85,
+                            "name": "Literal",
+                            "src": "369:5:1"
+                          }
+                        ],
+                        "id": 86,
+                        "name": "Assignment",
+                        "src": "356:18:1"
+                      }
+                    ],
+                    "id": 87,
+                    "name": "ExpressionStatement",
+                    "src": "356:18:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "enum SimpleCommit.CommitStatesType"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "myState",
+                              "referencedDeclaration": 68,
+                              "type": "enum SimpleCommit.CommitStatesType"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 71,
+                                  "type": "struct SimpleCommit.CommitType storage pointer",
+                                  "value": "c"
+                                },
+                                "id": 88,
+                                "name": "Identifier",
+                                "src": "384:1:1"
+                              }
+                            ],
+                            "id": 90,
+                            "name": "MemberAccess",
+                            "src": "384:9:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "member_name": "Waiting",
+                              "referencedDeclaration": null,
+                              "type": "enum SimpleCommit.CommitStatesType"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 60,
+                                  "type": "type(enum SimpleCommit.CommitStatesType)",
+                                  "value": "CommitStatesType"
+                                },
+                                "id": 91,
+                                "name": "Identifier",
+                                "src": "396:16:1"
+                              }
+                            ],
+                            "id": 92,
+                            "name": "MemberAccess",
+                            "src": "396:24:1"
+                          }
+                        ],
+                        "id": 93,
+                        "name": "Assignment",
+                        "src": "384:36:1"
+                      }
+                    ],
+                    "id": 94,
+                    "name": "ExpressionStatement",
+                    "src": "384:36:1"
+                  }
+                ],
+                "id": 95,
+                "name": "Block",
+                "src": "322:105:1"
+              }
+            ],
+            "id": 96,
+            "name": "FunctionDefinition",
+            "src": "266:161:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "reveal",
+              "scope": 213,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "c",
+                      "scope": 149,
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "type": "struct SimpleCommit.CommitType",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "CommitType",
+                          "referencedDeclaration": 69,
+                          "type": "struct SimpleCommit.CommitType"
+                        },
+                        "id": 97,
+                        "name": "UserDefinedTypeName",
+                        "src": "458:10:1"
+                      }
+                    ],
+                    "id": 98,
+                    "name": "VariableDeclaration",
+                    "src": "458:20:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "nonce",
+                      "scope": 149,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 99,
+                        "name": "ElementaryTypeName",
+                        "src": "488:7:1"
+                      }
+                    ],
+                    "id": 100,
+                    "name": "VariableDeclaration",
+                    "src": "488:13:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "v",
+                      "scope": 149,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes1",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes1",
+                          "type": "bytes1"
+                        },
+                        "id": 101,
+                        "name": "ElementaryTypeName",
+                        "src": "511:6:1"
+                      }
+                    ],
+                    "id": 102,
+                    "name": "VariableDeclaration",
+                    "src": "511:8:1"
+                  }
+                ],
+                "id": 103,
+                "name": "ParameterList",
+                "src": "448:77:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 104,
+                "name": "ParameterList",
+                "src": "533:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                231,
+                                232
+                              ],
+                              "referencedDeclaration": 231,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 105,
+                            "name": "Identifier",
+                            "src": "543:7:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                                "typeString": "enum SimpleCommit.CommitStatesType"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "==",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "myState",
+                                  "referencedDeclaration": 68,
+                                  "type": "enum SimpleCommit.CommitStatesType"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 98,
+                                      "type": "struct SimpleCommit.CommitType storage pointer",
+                                      "value": "c"
+                                    },
+                                    "id": 106,
+                                    "name": "Identifier",
+                                    "src": "551:1:1"
+                                  }
+                                ],
+                                "id": 107,
+                                "name": "MemberAccess",
+                                "src": "551:9:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "Waiting",
+                                  "referencedDeclaration": null,
+                                  "type": "enum SimpleCommit.CommitStatesType"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 60,
+                                      "type": "type(enum SimpleCommit.CommitStatesType)",
+                                      "value": "CommitStatesType"
+                                    },
+                                    "id": 108,
+                                    "name": "Identifier",
+                                    "src": "564:16:1"
+                                  }
+                                ],
+                                "id": 109,
+                                "name": "MemberAccess",
+                                "src": "564:24:1"
+                              }
+                            ],
+                            "id": 110,
+                            "name": "BinaryOperation",
+                            "src": "551:37:1"
+                          }
+                        ],
+                        "id": 111,
+                        "name": "FunctionCall",
+                        "src": "543:46:1"
+                      }
+                    ],
+                    "id": 112,
+                    "name": "ExpressionStatement",
+                    "src": "543:46:1"
+                  },
+                  {
+                    "attributes": {
+                      "assignments": [
+                        114
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "ver",
+                          "scope": 148,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "bytes32",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "bytes32",
+                              "type": "bytes32"
+                            },
+                            "id": 113,
+                            "name": "ElementaryTypeName",
+                            "src": "599:7:1"
+                          }
+                        ],
+                        "id": 114,
+                        "name": "VariableDeclaration",
+                        "src": "599:11:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "bytes32",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bytes_memory_ptr",
+                                  "typeString": "bytes memory"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 237,
+                              "type": "function (bytes memory) pure returns (bytes32)",
+                              "value": "sha256"
+                            },
+                            "id": 115,
+                            "name": "Identifier",
+                            "src": "613:6:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "bytes memory",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_bytes32",
+                                      "typeString": "bytes32"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_bytes1",
+                                      "typeString": "bytes1"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "encodePacked",
+                                  "referencedDeclaration": null,
+                                  "type": "function () pure returns (bytes memory)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 215,
+                                      "type": "abi",
+                                      "value": "abi"
+                                    },
+                                    "id": 116,
+                                    "name": "Identifier",
+                                    "src": "620:3:1"
+                                  }
+                                ],
+                                "id": 117,
+                                "name": "MemberAccess",
+                                "src": "620:16:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 100,
+                                  "type": "bytes32",
+                                  "value": "nonce"
+                                },
+                                "id": 118,
+                                "name": "Identifier",
+                                "src": "637:5:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 102,
+                                  "type": "bytes1",
+                                  "value": "v"
+                                },
+                                "id": 119,
+                                "name": "Identifier",
+                                "src": "644:1:1"
+                              }
+                            ],
+                            "id": 120,
+                            "name": "FunctionCall",
+                            "src": "620:26:1"
+                          }
+                        ],
+                        "id": 121,
+                        "name": "FunctionCall",
+                        "src": "613:34:1"
+                      }
+                    ],
+                    "id": 122,
+                    "name": "VariableDeclarationStatement",
+                    "src": "599:48:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "enum SimpleCommit.CommitStatesType"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "myState",
+                              "referencedDeclaration": 68,
+                              "type": "enum SimpleCommit.CommitStatesType"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 98,
+                                  "type": "struct SimpleCommit.CommitType storage pointer",
+                                  "value": "c"
+                                },
+                                "id": 123,
+                                "name": "Identifier",
+                                "src": "657:1:1"
+                              }
+                            ],
+                            "id": 125,
+                            "name": "MemberAccess",
+                            "src": "657:9:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "member_name": "Revealed",
+                              "referencedDeclaration": null,
+                              "type": "enum SimpleCommit.CommitStatesType"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 60,
+                                  "type": "type(enum SimpleCommit.CommitStatesType)",
+                                  "value": "CommitStatesType"
+                                },
+                                "id": 126,
+                                "name": "Identifier",
+                                "src": "669:16:1"
+                              }
+                            ],
+                            "id": 127,
+                            "name": "MemberAccess",
+                            "src": "669:25:1"
+                          }
+                        ],
+                        "id": 128,
+                        "name": "Assignment",
+                        "src": "657:37:1"
+                      }
+                    ],
+                    "id": 129,
+                    "name": "ExpressionStatement",
+                    "src": "657:37:1"
+                  },
+                  {
+                    "attributes": {
+                      "falseBody": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "==",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 114,
+                              "type": "bytes32",
+                              "value": "ver"
+                            },
+                            "id": 130,
+                            "name": "Identifier",
+                            "src": "708:3:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "commited",
+                              "referencedDeclaration": 62,
+                              "type": "bytes32"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 98,
+                                  "type": "struct SimpleCommit.CommitType storage pointer",
+                                  "value": "c"
+                                },
+                                "id": 131,
+                                "name": "Identifier",
+                                "src": "715:1:1"
+                              }
+                            ],
+                            "id": 132,
+                            "name": "MemberAccess",
+                            "src": "715:10:1"
+                          }
+                        ],
+                        "id": 133,
+                        "name": "BinaryOperation",
+                        "src": "708:17:1"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "=",
+                                  "type": "bool"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": true,
+                                      "member_name": "verified",
+                                      "referencedDeclaration": 66,
+                                      "type": "bool"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 98,
+                                          "type": "struct SimpleCommit.CommitType storage pointer",
+                                          "value": "c"
+                                        },
+                                        "id": 134,
+                                        "name": "Identifier",
+                                        "src": "741:1:1"
+                                      }
+                                    ],
+                                    "id": 136,
+                                    "name": "MemberAccess",
+                                    "src": "741:10:1"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "hexvalue": "74727565",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "subdenomination": null,
+                                      "token": "bool",
+                                      "type": "bool",
+                                      "value": "true"
+                                    },
+                                    "id": 137,
+                                    "name": "Literal",
+                                    "src": "754:4:1"
+                                  }
+                                ],
+                                "id": 138,
+                                "name": "Assignment",
+                                "src": "741:17:1"
+                              }
+                            ],
+                            "id": 139,
+                            "name": "ExpressionStatement",
+                            "src": "741:17:1"
+                          },
+                          {
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "=",
+                                  "type": "bytes1"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": true,
+                                      "member_name": "value",
+                                      "referencedDeclaration": 64,
+                                      "type": "bytes1"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 98,
+                                          "type": "struct SimpleCommit.CommitType storage pointer",
+                                          "value": "c"
+                                        },
+                                        "id": 140,
+                                        "name": "Identifier",
+                                        "src": "772:1:1"
+                                      }
+                                    ],
+                                    "id": 142,
+                                    "name": "MemberAccess",
+                                    "src": "772:7:1"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 102,
+                                      "type": "bytes1",
+                                      "value": "v"
+                                    },
+                                    "id": 143,
+                                    "name": "Identifier",
+                                    "src": "782:1:1"
+                                  }
+                                ],
+                                "id": 144,
+                                "name": "Assignment",
+                                "src": "772:11:1"
+                              }
+                            ],
+                            "id": 145,
+                            "name": "ExpressionStatement",
+                            "src": "772:11:1"
+                          }
+                        ],
+                        "id": 146,
+                        "name": "Block",
+                        "src": "727:67:1"
+                      }
+                    ],
+                    "id": 147,
+                    "name": "IfStatement",
+                    "src": "704:90:1"
+                  }
+                ],
+                "id": 148,
+                "name": "Block",
+                "src": "533:267:1"
+              }
+            ],
+            "id": 149,
+            "name": "FunctionDefinition",
+            "src": "433:367:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "hashData",
+              "scope": 213,
+              "stateMutability": "pure",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "val",
+                      "scope": 167,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 150,
+                        "name": "ElementaryTypeName",
+                        "src": "825:6:1"
+                      }
+                    ],
+                    "id": 151,
+                    "name": "VariableDeclaration",
+                    "src": "825:17:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "nonce",
+                      "scope": 167,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 152,
+                        "name": "ElementaryTypeName",
+                        "src": "844:6:1"
+                      }
+                    ],
+                    "id": 153,
+                    "name": "VariableDeclaration",
+                    "src": "844:19:1"
+                  }
+                ],
+                "id": 154,
+                "name": "ParameterList",
+                "src": "824:40:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 167,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 155,
+                        "name": "ElementaryTypeName",
+                        "src": "886:7:1"
+                      }
+                    ],
+                    "id": 156,
+                    "name": "VariableDeclaration",
+                    "src": "886:7:1"
+                  }
+                ],
+                "id": 157,
+                "name": "ParameterList",
+                "src": "885:9:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 157
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "bytes32",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bytes_memory_ptr",
+                                  "typeString": "bytes memory"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 237,
+                              "type": "function (bytes memory) pure returns (bytes32)",
+                              "value": "sha256"
+                            },
+                            "id": 158,
+                            "name": "Identifier",
+                            "src": "912:6:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "bytes memory",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "encodePacked",
+                                  "referencedDeclaration": null,
+                                  "type": "function () pure returns (bytes memory)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 215,
+                                      "type": "abi",
+                                      "value": "abi"
+                                    },
+                                    "id": 159,
+                                    "name": "Identifier",
+                                    "src": "919:3:1"
+                                  }
+                                ],
+                                "id": 160,
+                                "name": "MemberAccess",
+                                "src": "919:16:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 153,
+                                  "type": "string memory",
+                                  "value": "nonce"
+                                },
+                                "id": 161,
+                                "name": "Identifier",
+                                "src": "936:5:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 151,
+                                  "type": "string memory",
+                                  "value": "val"
+                                },
+                                "id": 162,
+                                "name": "Identifier",
+                                "src": "943:3:1"
+                              }
+                            ],
+                            "id": 163,
+                            "name": "FunctionCall",
+                            "src": "919:28:1"
+                          }
+                        ],
+                        "id": 164,
+                        "name": "FunctionCall",
+                        "src": "912:36:1"
+                      }
+                    ],
+                    "id": 165,
+                    "name": "Return",
+                    "src": "905:43:1"
+                  }
+                ],
+                "id": 166,
+                "name": "Block",
+                "src": "895:60:1"
+              }
+            ],
+            "id": 167,
+            "name": "FunctionDefinition",
+            "src": "807:148:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "isCorrect",
+              "scope": 213,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "c",
+                      "scope": 186,
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "type": "struct SimpleCommit.CommitType",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "CommitType",
+                          "referencedDeclaration": 69,
+                          "type": "struct SimpleCommit.CommitType"
+                        },
+                        "id": 168,
+                        "name": "UserDefinedTypeName",
+                        "src": "984:10:1"
+                      }
+                    ],
+                    "id": 169,
+                    "name": "VariableDeclaration",
+                    "src": "984:20:1"
+                  }
+                ],
+                "id": 170,
+                "name": "ParameterList",
+                "src": "983:22:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 186,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 171,
+                        "name": "ElementaryTypeName",
+                        "src": "1027:4:1"
+                      }
+                    ],
+                    "id": 172,
+                    "name": "VariableDeclaration",
+                    "src": "1027:4:1"
+                  }
+                ],
+                "id": 173,
+                "name": "ParameterList",
+                "src": "1026:6:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                231,
+                                232
+                              ],
+                              "referencedDeclaration": 231,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 174,
+                            "name": "Identifier",
+                            "src": "1043:7:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                                "typeString": "enum SimpleCommit.CommitStatesType"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "==",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "myState",
+                                  "referencedDeclaration": 68,
+                                  "type": "enum SimpleCommit.CommitStatesType"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 169,
+                                      "type": "struct SimpleCommit.CommitType storage pointer",
+                                      "value": "c"
+                                    },
+                                    "id": 175,
+                                    "name": "Identifier",
+                                    "src": "1051:1:1"
+                                  }
+                                ],
+                                "id": 176,
+                                "name": "MemberAccess",
+                                "src": "1051:9:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "Revealed",
+                                  "referencedDeclaration": null,
+                                  "type": "enum SimpleCommit.CommitStatesType"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 60,
+                                      "type": "type(enum SimpleCommit.CommitStatesType)",
+                                      "value": "CommitStatesType"
+                                    },
+                                    "id": 177,
+                                    "name": "Identifier",
+                                    "src": "1064:16:1"
+                                  }
+                                ],
+                                "id": 178,
+                                "name": "MemberAccess",
+                                "src": "1064:25:1"
+                              }
+                            ],
+                            "id": 179,
+                            "name": "BinaryOperation",
+                            "src": "1051:38:1"
+                          }
+                        ],
+                        "id": 180,
+                        "name": "FunctionCall",
+                        "src": "1043:47:1"
+                      }
+                    ],
+                    "id": 181,
+                    "name": "ExpressionStatement",
+                    "src": "1043:47:1"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 173
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "verified",
+                          "referencedDeclaration": 66,
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 169,
+                              "type": "struct SimpleCommit.CommitType storage pointer",
+                              "value": "c"
+                            },
+                            "id": 182,
+                            "name": "Identifier",
+                            "src": "1107:1:1"
+                          }
+                        ],
+                        "id": 183,
+                        "name": "MemberAccess",
+                        "src": "1107:10:1"
+                      }
+                    ],
+                    "id": 184,
+                    "name": "Return",
+                    "src": "1100:17:1"
+                  }
+                ],
+                "id": 185,
+                "name": "Block",
+                "src": "1033:91:1"
+              }
+            ],
+            "id": 186,
+            "name": "FunctionDefinition",
+            "src": "965:159:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getValue",
+              "scope": 213,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "c",
+                      "scope": 212,
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "type": "struct SimpleCommit.CommitType",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "CommitType",
+                          "referencedDeclaration": 69,
+                          "type": "struct SimpleCommit.CommitType"
+                        },
+                        "id": 187,
+                        "name": "UserDefinedTypeName",
+                        "src": "1148:10:1"
+                      }
+                    ],
+                    "id": 188,
+                    "name": "VariableDeclaration",
+                    "src": "1148:20:1"
+                  }
+                ],
+                "id": 189,
+                "name": "ParameterList",
+                "src": "1147:22:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 212,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes1",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes1",
+                          "type": "bytes1"
+                        },
+                        "id": 190,
+                        "name": "ElementaryTypeName",
+                        "src": "1191:6:1"
+                      }
+                    ],
+                    "id": 191,
+                    "name": "VariableDeclaration",
+                    "src": "1191:6:1"
+                  }
+                ],
+                "id": 192,
+                "name": "ParameterList",
+                "src": "1190:8:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                231,
+                                232
+                              ],
+                              "referencedDeclaration": 231,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 193,
+                            "name": "Identifier",
+                            "src": "1209:7:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_enum$_CommitStatesType_$60",
+                                "typeString": "enum SimpleCommit.CommitStatesType"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "==",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "myState",
+                                  "referencedDeclaration": 68,
+                                  "type": "enum SimpleCommit.CommitStatesType"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 188,
+                                      "type": "struct SimpleCommit.CommitType storage pointer",
+                                      "value": "c"
+                                    },
+                                    "id": 194,
+                                    "name": "Identifier",
+                                    "src": "1217:1:1"
+                                  }
+                                ],
+                                "id": 195,
+                                "name": "MemberAccess",
+                                "src": "1217:9:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "Revealed",
+                                  "referencedDeclaration": null,
+                                  "type": "enum SimpleCommit.CommitStatesType"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 60,
+                                      "type": "type(enum SimpleCommit.CommitStatesType)",
+                                      "value": "CommitStatesType"
+                                    },
+                                    "id": 196,
+                                    "name": "Identifier",
+                                    "src": "1230:16:1"
+                                  }
+                                ],
+                                "id": 197,
+                                "name": "MemberAccess",
+                                "src": "1230:25:1"
+                              }
+                            ],
+                            "id": 198,
+                            "name": "BinaryOperation",
+                            "src": "1217:38:1"
+                          }
+                        ],
+                        "id": 199,
+                        "name": "FunctionCall",
+                        "src": "1209:47:1"
+                      }
+                    ],
+                    "id": 200,
+                    "name": "ExpressionStatement",
+                    "src": "1209:47:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                231,
+                                232
+                              ],
+                              "referencedDeclaration": 231,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 201,
+                            "name": "Identifier",
+                            "src": "1266:7:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "==",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "verified",
+                                  "referencedDeclaration": 66,
+                                  "type": "bool"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 188,
+                                      "type": "struct SimpleCommit.CommitType storage pointer",
+                                      "value": "c"
+                                    },
+                                    "id": 202,
+                                    "name": "Identifier",
+                                    "src": "1274:1:1"
+                                  }
+                                ],
+                                "id": 203,
+                                "name": "MemberAccess",
+                                "src": "1274:10:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "74727565",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "bool",
+                                  "type": "bool",
+                                  "value": "true"
+                                },
+                                "id": 204,
+                                "name": "Literal",
+                                "src": "1288:4:1"
+                              }
+                            ],
+                            "id": 205,
+                            "name": "BinaryOperation",
+                            "src": "1274:18:1"
+                          }
+                        ],
+                        "id": 206,
+                        "name": "FunctionCall",
+                        "src": "1266:27:1"
+                      }
+                    ],
+                    "id": 207,
+                    "name": "ExpressionStatement",
+                    "src": "1266:27:1"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 192
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "value",
+                          "referencedDeclaration": 64,
+                          "type": "bytes1"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 188,
+                              "type": "struct SimpleCommit.CommitType storage pointer",
+                              "value": "c"
+                            },
+                            "id": 208,
+                            "name": "Identifier",
+                            "src": "1310:1:1"
+                          }
+                        ],
+                        "id": 209,
+                        "name": "MemberAccess",
+                        "src": "1310:7:1"
+                      }
+                    ],
+                    "id": 210,
+                    "name": "Return",
+                    "src": "1303:14:1"
+                  }
+                ],
+                "id": 211,
+                "name": "Block",
+                "src": "1199:125:1"
+              }
+            ],
+            "id": 212,
+            "name": "FunctionDefinition",
+            "src": "1130:194:1"
+          }
+        ],
+        "id": 213,
+        "name": "ContractDefinition",
+        "src": "34:1292:1"
+      }
+    ],
+    "id": 214,
+    "name": "SourceUnit",
+    "src": "0:1329:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-09-30T00:02:15.173Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
