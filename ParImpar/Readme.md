@@ -8,7 +8,10 @@ poderá então rodar os testes com `truffle test`.
 ## Considerações sobre o código
 
 Eu fiz algumas mudanças na library do `SimpleCommit.sol`. Apenas mudanças de variáveis para funcionar 
-para o propósito desse jogo.
+para o propósito desse jogo e validações.
+
+O código do `EvenOddGame.sol` tem várias validações. Uma delas é que apenas os dois endereços colocados no deploy
+podem interagir com o contrato. 
 
 Na hora de gerar o hash do valor escolhido enviar para o contrato o javascript me deu muitos problemas.
 Não consegui achar nenhuma maneira de gerar um hash, dentro do javascript,
@@ -23,4 +26,7 @@ https://ethereum.stackexchange.com/questions/57046/pure-function-execution-flow?
 
 O arquivo `1_tests.js` descreve um jogo funcionando. Há o deploy do contrato, jogadores escolhem par ou ímpar. Em seguida enviam
 o commit dos seus valores escolhidos e revelam seus valores. O contrato recebe um valor de `startTime` e `endTime` durante o deploy no arquivo `1_initial_migration.js`. Esses valores são usados para aplicar a punição do jogador: se ele não revelar seu
-commit nesse intervalo de tempo, ele perde sua aposta para o outro jogador. Se nenhum dos dois revelar, o dinheiro fica para sempre no contrato.
+commit nesse intervalo de tempo, ele perde sua aposta para o outro jogador. Se nenhum dos dois revelar, o dinheiro fica para sempre no contrato. Se as duas partes revelarem, verifica se a soma dos números é par ou ímpar e o valor é retornado para quem
+apostou corretamente.
+
+
