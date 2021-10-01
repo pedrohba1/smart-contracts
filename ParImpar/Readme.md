@@ -2,8 +2,8 @@
 
 ## Executando o programa
 
-Você precisa instalar o truffle com `npm -g install truffle`. Feito isso,
-pode rodar os testes com `truffle test`.
+Você precisa instalar o truffle com `npm -g install truffle`. Feito isso rode o ganache do jeito que quiser e
+poderá então rodar os testes com `truffle test`.
 
 ## Considerações sobre o código
 
