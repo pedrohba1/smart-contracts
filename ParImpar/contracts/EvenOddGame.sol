@@ -100,10 +100,8 @@ contract EvenOddGame {
             ok = true;
         }
     }
-
-
-        
-    modifier ChecksForDistribution {
+    
+    function distributeFunds() public returns (uint256)  {
         if(!timeHasEmded()){
             require(ok == true, "the commits were not revealed yet, there is still time");
         } else {
@@ -117,15 +115,14 @@ contract EvenOddGame {
             // inteiro para quem revelou 
             if (!hasRevealed1){
                 participant2.transfer(funds);
+                return 1;
             }
             if (!hasRevealed2){
                 participant1.transfer(funds);
+                return 1;
             }
         }
-        _;
-    }
 
-    function distributeFunds() public ChecksForDistribution returns (uint256)  {
         uint256 val1 =  participants[participant1].sc.getValue();
         uint256 val2 =  participants[participant2].sc.getValue();
 
