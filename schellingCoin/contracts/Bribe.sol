@@ -1,4 +1,6 @@
-pragma solidity >=0.4.22 <0.9.0;
+//SPDX-License-Identifier: Unlicense
+pragma solidity ^0.8.0;
+
 
 contract Bribe {
     //1. cadastra subornados

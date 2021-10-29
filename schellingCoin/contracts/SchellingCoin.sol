@@ -1,6 +1,8 @@
-pragma solidity >=0.4.22 <0.9.0;
+//SPDX-License-Identifier: Unlicense
+pragma solidity ^0.8.0;
 
-contract simpleSchellingCoin {
+
+contract SchellingCoin {
     // def do valor de P,
     //d eposito para pagar os participantes
     // adicionar endereços(?)
