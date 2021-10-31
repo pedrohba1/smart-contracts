@@ -1,0 +1,5 @@
+network:
+    default: ropsten
+    networks:
+        ropsten:
+            host: http://ropsten.infura.io/v3/550c16c263084e0ea13f66917f132548

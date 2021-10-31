@@ -15,7 +15,7 @@ N = 14 # são 14 artigos (por enquanto)
 T = 5 # cada aluno lê e avalia 5 artigos 
 print(a,b)
 
-shared_secret_key = g**(a*b) %p
+shared_secret_key = ((g**a)%p)**b %p
 h = str(shared_secret_key).encode();
 while len(artigos) < T:
     h = hashlib.sha256(h).digest()
