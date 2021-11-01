@@ -16,7 +16,7 @@ def doCommit(n,v):
 
 def main():
     network.is_connected()
-    accounts.add('b3ae9e25e97cabede5b6920e698a51381efc36bed67fcfbbdbe16e8260ee3b4f')
+    accounts.add(PRIVATE_KEY)
     
     abi = CommitVector.abi
 
@@ -30,7 +30,7 @@ def main():
     # 04 é o avve
     # 05 é do pancakeswap
     # 12 é do yup
-    correcao1 = [b'\x04',b'\x02', b'\x12', b'\05',  b'\x01' ]
+    correcao1 = [b'\x04',b'\x02', b'\x12', b'\x05',  b'\x01' ]
     print(ord(correcao1[0]), ord(correcao1[2]))
     commit1 = doCommit(nonce1,correcao1)
     print(commit1)

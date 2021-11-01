@@ -25,14 +25,14 @@ library CommitLib {
         string memory nonce,
         uint256 val
     ) public {
-        require(c.myState == CommitStatesType.Waiting);
+        require(c.myState == CommitStatesType.Waiting, "commit was already revealed");
         bytes32 ver = sha256(abi.encodePacked(nonce, val));
         c.myState = CommitStatesType.Revealed;
         if (ver == c.commited) {
             c.verified = true;
             c.value = val;
         } else {
-            revert("revealed value is not the same as the commit");
+            revert("value does not match commit");
         }
     }
 
@@ -49,7 +49,7 @@ library CommitLib {
             c.myState == CommitStatesType.Revealed,
             "commit not revealed yet"
         );
-        require(c.verified == true);
+        require(c.verified == true, "commit does not match");
         return c.value;
     }
 }

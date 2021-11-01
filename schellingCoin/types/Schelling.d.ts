@@ -22,14 +22,59 @@ import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 interface SchellingInterface extends ethers.utils.Interface {
   functions: {
     "commit(bytes32)": FunctionFragment;
+    "generateHash(string,uint256)": FunctionFragment;
+    "participants(address)": FunctionFragment;
+    "reveal(string,uint256)": FunctionFragment;
     "seeCommit()": FunctionFragment;
+    "setRevealingState()": FunctionFragment;
+    "showCurrentState()": FunctionFragment;
+    "state()": FunctionFragment;
   };
 
   encodeFunctionData(functionFragment: "commit", values: [BytesLike]): string;
+  encodeFunctionData(
+    functionFragment: "generateHash",
+    values: [string, BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "participants",
+    values: [string]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "reveal",
+    values: [string, BigNumberish]
+  ): string;
   encodeFunctionData(functionFragment: "seeCommit", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "setRevealingState",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "showCurrentState",
+    values?: undefined
+  ): string;
+  encodeFunctionData(functionFragment: "state", values?: undefined): string;
 
   decodeFunctionResult(functionFragment: "commit", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "generateHash",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "participants",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "reveal", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "seeCommit", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "setRevealingState",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "showCurrentState",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "state", data: BytesLike): Result;
 
   events: {};
 }
@@ -88,13 +133,91 @@ export class Schelling extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    seeCommit(
+    generateHash(
+      nonce: string,
+      val: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[string]>;
+
+    "generateHash(string,uint256)"(
+      nonce: string,
+      val: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[string]>;
+
+    participants(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<
+      [
+        [string, BigNumber, boolean, number] & {
+          commited: string;
+          value: BigNumber;
+          verified: boolean;
+          myState: number;
+        }
+      ] & {
+        sc: [string, BigNumber, boolean, number] & {
+          commited: string;
+          value: BigNumber;
+          verified: boolean;
+          myState: number;
+        };
+      }
+    >;
+
+    "participants(address)"(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<
+      [
+        [string, BigNumber, boolean, number] & {
+          commited: string;
+          value: BigNumber;
+          verified: boolean;
+          myState: number;
+        }
+      ] & {
+        sc: [string, BigNumber, boolean, number] & {
+          commited: string;
+          value: BigNumber;
+          verified: boolean;
+          myState: number;
+        };
+      }
+    >;
+
+    reveal(
+      nonce: string,
+      val: BigNumberish,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    "seeCommit()"(
+    "reveal(string,uint256)"(
+      nonce: string,
+      val: BigNumberish,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
+
+    seeCommit(overrides?: CallOverrides): Promise<[string]>;
+
+    "seeCommit()"(overrides?: CallOverrides): Promise<[string]>;
+
+    setRevealingState(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    "setRevealingState()"(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    showCurrentState(overrides?: CallOverrides): Promise<[number]>;
+
+    "showCurrentState()"(overrides?: CallOverrides): Promise<[number]>;
+
+    state(overrides?: CallOverrides): Promise<[number]>;
+
+    "state()"(overrides?: CallOverrides): Promise<[number]>;
   };
 
   commit(
@@ -107,13 +230,73 @@ export class Schelling extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  seeCommit(
+  generateHash(
+    nonce: string,
+    val: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<string>;
+
+  "generateHash(string,uint256)"(
+    nonce: string,
+    val: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<string>;
+
+  participants(
+    arg0: string,
+    overrides?: CallOverrides
+  ): Promise<
+    [string, BigNumber, boolean, number] & {
+      commited: string;
+      value: BigNumber;
+      verified: boolean;
+      myState: number;
+    }
+  >;
+
+  "participants(address)"(
+    arg0: string,
+    overrides?: CallOverrides
+  ): Promise<
+    [string, BigNumber, boolean, number] & {
+      commited: string;
+      value: BigNumber;
+      verified: boolean;
+      myState: number;
+    }
+  >;
+
+  reveal(
+    nonce: string,
+    val: BigNumberish,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  "seeCommit()"(
+  "reveal(string,uint256)"(
+    nonce: string,
+    val: BigNumberish,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
+
+  seeCommit(overrides?: CallOverrides): Promise<string>;
+
+  "seeCommit()"(overrides?: CallOverrides): Promise<string>;
+
+  setRevealingState(
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  "setRevealingState()"(
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  showCurrentState(overrides?: CallOverrides): Promise<number>;
+
+  "showCurrentState()"(overrides?: CallOverrides): Promise<number>;
+
+  state(overrides?: CallOverrides): Promise<number>;
+
+  "state()"(overrides?: CallOverrides): Promise<number>;
 
   callStatic: {
     commit(h: BytesLike, overrides?: CallOverrides): Promise<boolean>;
@@ -123,9 +306,69 @@ export class Schelling extends BaseContract {
       overrides?: CallOverrides
     ): Promise<boolean>;
 
+    generateHash(
+      nonce: string,
+      val: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<string>;
+
+    "generateHash(string,uint256)"(
+      nonce: string,
+      val: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<string>;
+
+    participants(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<
+      [string, BigNumber, boolean, number] & {
+        commited: string;
+        value: BigNumber;
+        verified: boolean;
+        myState: number;
+      }
+    >;
+
+    "participants(address)"(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<
+      [string, BigNumber, boolean, number] & {
+        commited: string;
+        value: BigNumber;
+        verified: boolean;
+        myState: number;
+      }
+    >;
+
+    reveal(
+      nonce: string,
+      val: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    "reveal(string,uint256)"(
+      nonce: string,
+      val: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
     seeCommit(overrides?: CallOverrides): Promise<string>;
 
     "seeCommit()"(overrides?: CallOverrides): Promise<string>;
+
+    setRevealingState(overrides?: CallOverrides): Promise<void>;
+
+    "setRevealingState()"(overrides?: CallOverrides): Promise<void>;
+
+    showCurrentState(overrides?: CallOverrides): Promise<number>;
+
+    "showCurrentState()"(overrides?: CallOverrides): Promise<number>;
+
+    state(overrides?: CallOverrides): Promise<number>;
+
+    "state()"(overrides?: CallOverrides): Promise<number>;
   };
 
   filters: {};
@@ -141,13 +384,56 @@ export class Schelling extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    seeCommit(
+    generateHash(
+      nonce: string,
+      val: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    "generateHash(string,uint256)"(
+      nonce: string,
+      val: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    participants(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
+
+    "participants(address)"(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    reveal(
+      nonce: string,
+      val: BigNumberish,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    "seeCommit()"(
+    "reveal(string,uint256)"(
+      nonce: string,
+      val: BigNumberish,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
+
+    seeCommit(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "seeCommit()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    setRevealingState(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    "setRevealingState()"(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    showCurrentState(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "showCurrentState()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    state(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "state()"(overrides?: CallOverrides): Promise<BigNumber>;
   };
 
   populateTransaction: {
@@ -161,12 +447,60 @@ export class Schelling extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    seeCommit(
+    generateHash(
+      nonce: string,
+      val: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    "generateHash(string,uint256)"(
+      nonce: string,
+      val: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    participants(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    "participants(address)"(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    reveal(
+      nonce: string,
+      val: BigNumberish,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    "seeCommit()"(
+    "reveal(string,uint256)"(
+      nonce: string,
+      val: BigNumberish,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
+
+    seeCommit(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    "seeCommit()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    setRevealingState(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    "setRevealingState()"(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    showCurrentState(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    "showCurrentState()"(
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    state(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    "state()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
   };
 }
