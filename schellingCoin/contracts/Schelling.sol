@@ -136,13 +136,13 @@ contract Schelling {
         return sha256(abi.encodePacked(nonce, val));
     }
 
-    function getYesVoters() public view returns (uint256){
+    function getYesVoters() public view returns (uint256) {
         return yesVoters;
     }
-   function getNoVoters() public view returns (uint256){
+
+    function getNoVoters() public view returns (uint256) {
         return noVoters;
     }
-
 
     // função auxiliar para mostrar o estado atual
     function showCurrentState() public view returns (RevealingState) {
