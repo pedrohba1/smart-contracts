@@ -21,9 +21,14 @@ describe("Schelling", function () {
         CommitLib: commitLibInstance.address,
       },
     });
-    schellingInstance = await schelling.connect(owner).deploy({
-      value: ethers.utils.parseUnits("5.0", "ether"),
-    });
+    schellingInstance = await schelling
+      .connect(owner)
+      .deploy(
+        "O contratante da empresa ACME deveria pagar o seguro? (EXEMPLO)",
+        {
+          value: ethers.utils.parseUnits("5.0", "ether"),
+        }
+      );
     await schellingInstance.deployed();
     expect(schellingInstance).to.not.be.null;
   });
@@ -67,5 +72,8 @@ describe("Schelling", function () {
     }
   });
 
-  it("should pay winners (majority)", async () => {});
+  it("should be able to see majority votes", async () => {
+    const majority = await schellingInstance.getMajority();
+    expect(majority).to.be.oneOf([0, 1]);
+  });
 });

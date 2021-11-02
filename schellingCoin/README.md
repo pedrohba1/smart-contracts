@@ -9,3 +9,4 @@ Um jeito melhor (mais pilantra, pois tem menos chances de ser descoberto), poré
 Dessa vez eu pesquisei um pouco mais para calcular o SHA256. Acontece que dá pra gerar o mesmo SHA256 do Solidity
 usando o module `ethers`. Ele tem uma função que funciona. Portanto, não tem mais o problema de gerar uma hash por meio de uma `pure function` no contrato inteligente e correr o risco de que esse hash seja visto.
 
+Também pensei em fazer o Schelling como se fosse um proto Kleros. O contrato é construído como um "julgamento" de um "caso" e os votantes votam sim e não dependendo do que está descrito no caso. Por exemplo, o deploy do contrato é feito com a pergunta "O contratante da empresa ACME deveria pagar o seguro?". Os participantes então votam sim ou não para esse caso.
