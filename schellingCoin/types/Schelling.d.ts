@@ -23,16 +23,19 @@ interface SchellingInterface extends ethers.utils.Interface {
   functions: {
     "claimReward()": FunctionFragment;
     "commit(bytes32)": FunctionFragment;
+    "geCommitValue(address)": FunctionFragment;
     "generateHash(string,uint256)": FunctionFragment;
     "getMajority()": FunctionFragment;
     "getNoVoters()": FunctionFragment;
     "getYesVoters()": FunctionFragment;
+    "participants(address)": FunctionFragment;
     "reveal(string,uint256)": FunctionFragment;
     "seeCommit()": FunctionFragment;
     "setFinishedState()": FunctionFragment;
     "setMajority()": FunctionFragment;
     "setRevealingState()": FunctionFragment;
     "showCurrentState()": FunctionFragment;
+    "state()": FunctionFragment;
   };
 
   encodeFunctionData(
@@ -40,6 +43,10 @@ interface SchellingInterface extends ethers.utils.Interface {
     values?: undefined
   ): string;
   encodeFunctionData(functionFragment: "commit", values: [BytesLike]): string;
+  encodeFunctionData(
+    functionFragment: "geCommitValue",
+    values: [string]
+  ): string;
   encodeFunctionData(
     functionFragment: "generateHash",
     values: [string, BigNumberish]
@@ -55,6 +62,10 @@ interface SchellingInterface extends ethers.utils.Interface {
   encodeFunctionData(
     functionFragment: "getYesVoters",
     values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "participants",
+    values: [string]
   ): string;
   encodeFunctionData(
     functionFragment: "reveal",
@@ -77,12 +88,17 @@ interface SchellingInterface extends ethers.utils.Interface {
     functionFragment: "showCurrentState",
     values?: undefined
   ): string;
+  encodeFunctionData(functionFragment: "state", values?: undefined): string;
 
   decodeFunctionResult(
     functionFragment: "claimReward",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "commit", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "geCommitValue",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "generateHash",
     data: BytesLike
@@ -97,6 +113,10 @@ interface SchellingInterface extends ethers.utils.Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "getYesVoters",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "participants",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "reveal", data: BytesLike): Result;
@@ -117,6 +137,7 @@ interface SchellingInterface extends ethers.utils.Interface {
     functionFragment: "showCurrentState",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(functionFragment: "state", data: BytesLike): Result;
 
   events: {};
 }
@@ -183,6 +204,16 @@ export class Schelling extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
+    geCommitValue(
+      _sender: string,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber]>;
+
+    "geCommitValue(address)"(
+      _sender: string,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber]>;
+
     generateHash(
       nonce: string,
       val: BigNumberish,
@@ -206,6 +237,48 @@ export class Schelling extends BaseContract {
     getYesVoters(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     "getYesVoters()"(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    participants(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<
+      [
+        [string, BigNumber, boolean, number] & {
+          commited: string;
+          value: BigNumber;
+          verified: boolean;
+          myState: number;
+        }
+      ] & {
+        sc: [string, BigNumber, boolean, number] & {
+          commited: string;
+          value: BigNumber;
+          verified: boolean;
+          myState: number;
+        };
+      }
+    >;
+
+    "participants(address)"(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<
+      [
+        [string, BigNumber, boolean, number] & {
+          commited: string;
+          value: BigNumber;
+          verified: boolean;
+          myState: number;
+        }
+      ] & {
+        sc: [string, BigNumber, boolean, number] & {
+          commited: string;
+          value: BigNumber;
+          verified: boolean;
+          myState: number;
+        };
+      }
+    >;
 
     reveal(
       nonce: string,
@@ -250,6 +323,10 @@ export class Schelling extends BaseContract {
     showCurrentState(overrides?: CallOverrides): Promise<[number]>;
 
     "showCurrentState()"(overrides?: CallOverrides): Promise<[number]>;
+
+    state(overrides?: CallOverrides): Promise<[number]>;
+
+    "state()"(overrides?: CallOverrides): Promise<[number]>;
   };
 
   claimReward(
@@ -269,6 +346,13 @@ export class Schelling extends BaseContract {
     h: BytesLike,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
+
+  geCommitValue(_sender: string, overrides?: CallOverrides): Promise<BigNumber>;
+
+  "geCommitValue(address)"(
+    _sender: string,
+    overrides?: CallOverrides
+  ): Promise<BigNumber>;
 
   generateHash(
     nonce: string,
@@ -293,6 +377,30 @@ export class Schelling extends BaseContract {
   getYesVoters(overrides?: CallOverrides): Promise<BigNumber>;
 
   "getYesVoters()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+  participants(
+    arg0: string,
+    overrides?: CallOverrides
+  ): Promise<
+    [string, BigNumber, boolean, number] & {
+      commited: string;
+      value: BigNumber;
+      verified: boolean;
+      myState: number;
+    }
+  >;
+
+  "participants(address)"(
+    arg0: string,
+    overrides?: CallOverrides
+  ): Promise<
+    [string, BigNumber, boolean, number] & {
+      commited: string;
+      value: BigNumber;
+      verified: boolean;
+      myState: number;
+    }
+  >;
 
   reveal(
     nonce: string,
@@ -338,6 +446,10 @@ export class Schelling extends BaseContract {
 
   "showCurrentState()"(overrides?: CallOverrides): Promise<number>;
 
+  state(overrides?: CallOverrides): Promise<number>;
+
+  "state()"(overrides?: CallOverrides): Promise<number>;
+
   callStatic: {
     claimReward(overrides?: CallOverrides): Promise<void>;
 
@@ -349,6 +461,16 @@ export class Schelling extends BaseContract {
       h: BytesLike,
       overrides?: CallOverrides
     ): Promise<boolean>;
+
+    geCommitValue(
+      _sender: string,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    "geCommitValue(address)"(
+      _sender: string,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
 
     generateHash(
       nonce: string,
@@ -373,6 +495,30 @@ export class Schelling extends BaseContract {
     getYesVoters(overrides?: CallOverrides): Promise<BigNumber>;
 
     "getYesVoters()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    participants(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<
+      [string, BigNumber, boolean, number] & {
+        commited: string;
+        value: BigNumber;
+        verified: boolean;
+        myState: number;
+      }
+    >;
+
+    "participants(address)"(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<
+      [string, BigNumber, boolean, number] & {
+        commited: string;
+        value: BigNumber;
+        verified: boolean;
+        myState: number;
+      }
+    >;
 
     reveal(
       nonce: string,
@@ -405,6 +551,10 @@ export class Schelling extends BaseContract {
     showCurrentState(overrides?: CallOverrides): Promise<number>;
 
     "showCurrentState()"(overrides?: CallOverrides): Promise<number>;
+
+    state(overrides?: CallOverrides): Promise<number>;
+
+    "state()"(overrides?: CallOverrides): Promise<number>;
   };
 
   filters: {};
@@ -426,6 +576,16 @@ export class Schelling extends BaseContract {
     "commit(bytes32)"(
       h: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    geCommitValue(
+      _sender: string,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    "geCommitValue(address)"(
+      _sender: string,
+      overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     generateHash(
@@ -451,6 +611,13 @@ export class Schelling extends BaseContract {
     getYesVoters(overrides?: CallOverrides): Promise<BigNumber>;
 
     "getYesVoters()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    participants(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
+
+    "participants(address)"(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
 
     reveal(
       nonce: string,
@@ -495,6 +662,10 @@ export class Schelling extends BaseContract {
     showCurrentState(overrides?: CallOverrides): Promise<BigNumber>;
 
     "showCurrentState()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    state(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "state()"(overrides?: CallOverrides): Promise<BigNumber>;
   };
 
   populateTransaction: {
@@ -514,6 +685,16 @@ export class Schelling extends BaseContract {
     "commit(bytes32)"(
       h: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    geCommitValue(
+      _sender: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    "geCommitValue(address)"(
+      _sender: string,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     generateHash(
@@ -539,6 +720,16 @@ export class Schelling extends BaseContract {
     getYesVoters(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     "getYesVoters()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    participants(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    "participants(address)"(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
 
     reveal(
       nonce: string,
@@ -585,5 +776,9 @@ export class Schelling extends BaseContract {
     "showCurrentState()"(
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
+
+    state(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    "state()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
   };
 }

@@ -21,14 +21,14 @@ contract Schelling {
         finished
     }
 
-    RevealingState private state;
+    RevealingState public state;
     PossibleVotes private majority;
 
     struct Participant {
         CommitLib.CommitType sc;
     }
 
-    mapping(address => Participant) private participants;
+    mapping(address => Participant) public participants;
 
     constructor(string memory _votingCase) payable {
         owner = msg.sender;
@@ -61,6 +61,7 @@ contract Schelling {
 
     // particiapntes revelam os votos
     function reveal(string memory nonce, uint256 val) public {
+        require(state == RevealingState.canReveal, "can't reveal yet");
         participants[msg.sender].sc.reveal(nonce, val);
         if (participants[msg.sender].sc.value == 1) {
             noVoters += 1;
@@ -123,6 +124,12 @@ contract Schelling {
     // função auxiliar para ver o valor commitado
     function seeCommit() public view returns (bytes32) {
         return participants[msg.sender].sc.showCommit();
+    }
+
+    // O contrato de bribe precisaria de uma função pra ler se um participante desse contrato
+    // de fato votou em quem ele falou que iria votar para poder emitir o suborno
+    function geCommitValue(address _sender) public view returns (uint256) {
+        return participants[_sender].sc.value;
     }
 
     // ESSA FUNÇÃO ABAIXO NÃO VAI SER USADA PARA GERAR O COMMIT PORQUE NÃO É 100% GARANTIA QUE O
