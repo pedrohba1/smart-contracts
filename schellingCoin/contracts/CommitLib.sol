@@ -25,7 +25,10 @@ library CommitLib {
         string memory nonce,
         uint256 val
     ) public {
-        require(c.myState == CommitStatesType.Waiting, "commit was already revealed");
+        require(
+            c.myState == CommitStatesType.Waiting,
+            "commit was already revealed"
+        );
         bytes32 ver = sha256(abi.encodePacked(nonce, val));
         c.myState = CommitStatesType.Revealed;
         if (ver == c.commited) {

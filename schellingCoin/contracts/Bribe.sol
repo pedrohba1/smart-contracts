@@ -1,7 +1,6 @@
 //SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
 
-
 contract Bribe {
     //1. cadastra subornados
     //2. identifica que o contrato Schelling acabou (posso usar chainlink keepers para isso)

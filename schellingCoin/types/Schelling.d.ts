@@ -21,21 +21,25 @@ import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface SchellingInterface extends ethers.utils.Interface {
   functions: {
+    "claimReward()": FunctionFragment;
     "commit(bytes32)": FunctionFragment;
-    "distribute()": FunctionFragment;
     "generateHash(string,uint256)": FunctionFragment;
     "getMajority()": FunctionFragment;
+    "getNoVoters()": FunctionFragment;
+    "getYesVoters()": FunctionFragment;
     "reveal(string,uint256)": FunctionFragment;
     "seeCommit()": FunctionFragment;
+    "setFinishedState()": FunctionFragment;
+    "setMajority()": FunctionFragment;
     "setRevealingState()": FunctionFragment;
     "showCurrentState()": FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "commit", values: [BytesLike]): string;
   encodeFunctionData(
-    functionFragment: "distribute",
+    functionFragment: "claimReward",
     values?: undefined
   ): string;
+  encodeFunctionData(functionFragment: "commit", values: [BytesLike]): string;
   encodeFunctionData(
     functionFragment: "generateHash",
     values: [string, BigNumberish]
@@ -45,10 +49,26 @@ interface SchellingInterface extends ethers.utils.Interface {
     values?: undefined
   ): string;
   encodeFunctionData(
+    functionFragment: "getNoVoters",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getYesVoters",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
     functionFragment: "reveal",
     values: [string, BigNumberish]
   ): string;
   encodeFunctionData(functionFragment: "seeCommit", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "setFinishedState",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "setMajority",
+    values?: undefined
+  ): string;
   encodeFunctionData(
     functionFragment: "setRevealingState",
     values?: undefined
@@ -58,8 +78,11 @@ interface SchellingInterface extends ethers.utils.Interface {
     values?: undefined
   ): string;
 
+  decodeFunctionResult(
+    functionFragment: "claimReward",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "commit", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "distribute", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "generateHash",
     data: BytesLike
@@ -68,8 +91,24 @@ interface SchellingInterface extends ethers.utils.Interface {
     functionFragment: "getMajority",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(
+    functionFragment: "getNoVoters",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "getYesVoters",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "reveal", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "seeCommit", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "setFinishedState",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "setMajority",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "setRevealingState",
     data: BytesLike
@@ -126,6 +165,14 @@ export class Schelling extends BaseContract {
   interface: SchellingInterface;
 
   functions: {
+    claimReward(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    "claimReward()"(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
     commit(
       h: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -133,14 +180,6 @@ export class Schelling extends BaseContract {
 
     "commit(bytes32)"(
       h: BytesLike,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
-
-    distribute(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
-
-    "distribute()"(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
@@ -160,6 +199,14 @@ export class Schelling extends BaseContract {
 
     "getMajority()"(overrides?: CallOverrides): Promise<[number]>;
 
+    getNoVoters(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    "getNoVoters()"(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    getYesVoters(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    "getYesVoters()"(overrides?: CallOverrides): Promise<[BigNumber]>;
+
     reveal(
       nonce: string,
       val: BigNumberish,
@@ -176,6 +223,22 @@ export class Schelling extends BaseContract {
 
     "seeCommit()"(overrides?: CallOverrides): Promise<[string]>;
 
+    setFinishedState(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    "setFinishedState()"(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    setMajority(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    "setMajority()"(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
     setRevealingState(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
@@ -189,6 +252,14 @@ export class Schelling extends BaseContract {
     "showCurrentState()"(overrides?: CallOverrides): Promise<[number]>;
   };
 
+  claimReward(
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  "claimReward()"(
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
   commit(
     h: BytesLike,
     overrides?: Overrides & { from?: string | Promise<string> }
@@ -196,14 +267,6 @@ export class Schelling extends BaseContract {
 
   "commit(bytes32)"(
     h: BytesLike,
-    overrides?: Overrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
-
-  distribute(
-    overrides?: Overrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
-
-  "distribute()"(
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
@@ -223,6 +286,14 @@ export class Schelling extends BaseContract {
 
   "getMajority()"(overrides?: CallOverrides): Promise<number>;
 
+  getNoVoters(overrides?: CallOverrides): Promise<BigNumber>;
+
+  "getNoVoters()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+  getYesVoters(overrides?: CallOverrides): Promise<BigNumber>;
+
+  "getYesVoters()"(overrides?: CallOverrides): Promise<BigNumber>;
+
   reveal(
     nonce: string,
     val: BigNumberish,
@@ -239,6 +310,22 @@ export class Schelling extends BaseContract {
 
   "seeCommit()"(overrides?: CallOverrides): Promise<string>;
 
+  setFinishedState(
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  "setFinishedState()"(
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  setMajority(
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  "setMajority()"(
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
   setRevealingState(
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
@@ -252,16 +339,16 @@ export class Schelling extends BaseContract {
   "showCurrentState()"(overrides?: CallOverrides): Promise<number>;
 
   callStatic: {
+    claimReward(overrides?: CallOverrides): Promise<void>;
+
+    "claimReward()"(overrides?: CallOverrides): Promise<void>;
+
     commit(h: BytesLike, overrides?: CallOverrides): Promise<boolean>;
 
     "commit(bytes32)"(
       h: BytesLike,
       overrides?: CallOverrides
     ): Promise<boolean>;
-
-    distribute(overrides?: CallOverrides): Promise<void>;
-
-    "distribute()"(overrides?: CallOverrides): Promise<void>;
 
     generateHash(
       nonce: string,
@@ -279,6 +366,14 @@ export class Schelling extends BaseContract {
 
     "getMajority()"(overrides?: CallOverrides): Promise<number>;
 
+    getNoVoters(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "getNoVoters()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    getYesVoters(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "getYesVoters()"(overrides?: CallOverrides): Promise<BigNumber>;
+
     reveal(
       nonce: string,
       val: BigNumberish,
@@ -295,6 +390,14 @@ export class Schelling extends BaseContract {
 
     "seeCommit()"(overrides?: CallOverrides): Promise<string>;
 
+    setFinishedState(overrides?: CallOverrides): Promise<void>;
+
+    "setFinishedState()"(overrides?: CallOverrides): Promise<void>;
+
+    setMajority(overrides?: CallOverrides): Promise<number>;
+
+    "setMajority()"(overrides?: CallOverrides): Promise<number>;
+
     setRevealingState(overrides?: CallOverrides): Promise<void>;
 
     "setRevealingState()"(overrides?: CallOverrides): Promise<void>;
@@ -307,6 +410,14 @@ export class Schelling extends BaseContract {
   filters: {};
 
   estimateGas: {
+    claimReward(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    "claimReward()"(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
     commit(
       h: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -314,14 +425,6 @@ export class Schelling extends BaseContract {
 
     "commit(bytes32)"(
       h: BytesLike,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<BigNumber>;
-
-    distribute(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<BigNumber>;
-
-    "distribute()"(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
@@ -341,6 +444,14 @@ export class Schelling extends BaseContract {
 
     "getMajority()"(overrides?: CallOverrides): Promise<BigNumber>;
 
+    getNoVoters(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "getNoVoters()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    getYesVoters(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "getYesVoters()"(overrides?: CallOverrides): Promise<BigNumber>;
+
     reveal(
       nonce: string,
       val: BigNumberish,
@@ -357,6 +468,22 @@ export class Schelling extends BaseContract {
 
     "seeCommit()"(overrides?: CallOverrides): Promise<BigNumber>;
 
+    setFinishedState(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    "setFinishedState()"(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    setMajority(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    "setMajority()"(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
     setRevealingState(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
@@ -371,6 +498,14 @@ export class Schelling extends BaseContract {
   };
 
   populateTransaction: {
+    claimReward(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    "claimReward()"(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
     commit(
       h: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -378,14 +513,6 @@ export class Schelling extends BaseContract {
 
     "commit(bytes32)"(
       h: BytesLike,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
-    distribute(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
-    "distribute()"(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
@@ -405,6 +532,14 @@ export class Schelling extends BaseContract {
 
     "getMajority()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
+    getNoVoters(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    "getNoVoters()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    getYesVoters(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    "getYesVoters()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
     reveal(
       nonce: string,
       val: BigNumberish,
@@ -420,6 +555,22 @@ export class Schelling extends BaseContract {
     seeCommit(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     "seeCommit()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    setFinishedState(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    "setFinishedState()"(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    setMajority(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    "setMajority()"(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
 
     setRevealingState(
       overrides?: Overrides & { from?: string | Promise<string> }

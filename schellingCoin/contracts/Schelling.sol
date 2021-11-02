@@ -10,7 +10,6 @@ contract Schelling {
     string private votingCase;
     uint256 private yesVoters = 0;
     uint256 private noVoters = 0;
-
     enum PossibleVotes {
         yes,
         no
@@ -18,12 +17,12 @@ contract Schelling {
 
     enum RevealingState {
         waiting,
-        canReveal
+        canReveal,
+        finished
     }
-    
+
     RevealingState private state;
     PossibleVotes private majority;
-
 
     struct Participant {
         CommitLib.CommitType sc;
@@ -38,14 +37,14 @@ contract Schelling {
         votingCase = _votingCase;
     }
 
-   modifier onlyOwner {
-      require(msg.sender == owner, "you are not the owner");
-      _;
-   }
+    modifier onlyOwner() {
+        require(msg.sender == owner, "you are not the owner");
+        _;
+    }
 
     // coletar os votos
     function commit(bytes32 h) public returns (bool) {
-        require(state == RevealingState.waiting, "it's time to reveal");
+        require(state == RevealingState.waiting, "it's not time to commit");
         participants[msg.sender].sc.commit(h);
         return true;
     }
@@ -55,61 +54,98 @@ contract Schelling {
         state = RevealingState.canReveal;
     }
 
+    // owner coloca o estado como "finished"
+    function setFinishedState() public onlyOwner {
+        state = RevealingState.finished;
+    }
 
     // particiapntes revelam os votos
-    function reveal (string memory nonce, uint256 val) public{
+    function reveal(string memory nonce, uint256 val) public {
         participants[msg.sender].sc.reveal(nonce, val);
-        if(participants[msg.sender].sc.value == 1) {
+        if (participants[msg.sender].sc.value == 1) {
             noVoters += 1;
         }
-        if(participants[msg.sender].sc.value == 0) {
+        if (participants[msg.sender].sc.value == 0) {
             yesVoters += 1;
         }
     }
-    
-    //TODO: função que checa quem é a maioria
-    function getMajority() public view returns(PossibleVotes) {
+
+    //função que checa quem é a maioria
+    function setMajority() public returns (PossibleVotes) {
+        require(state == RevealingState.finished, "it isn't finished");
         require(yesVoters != noVoters, "tie");
-        if(yesVoters > noVoters){
+        if (yesVoters > noVoters) {
+            majority = PossibleVotes.yes;
             return PossibleVotes.yes;
-        }
-        else {
+        } else {
+            majority = PossibleVotes.no;
             return PossibleVotes.no;
         }
     }
 
-
-
-    //TODO: função que distribui o prêmio igualmente entre a maioria
-    function distribute() public {
-
-
-
+    // função view para saber o resultado
+    function getMajority() public view returns (PossibleVotes) {
+        require(yesVoters != noVoters, "tie");
+        if (yesVoters > noVoters) {
+            return PossibleVotes.yes;
+        } else {
+            return PossibleVotes.no;
+        }
     }
 
+    // usuários podem pegar seus fundos por essa função.
+    // A distribuição poderia ser feita por meio de um array, mas isso custaria muito gás.
+    // então cada um que votou tem que pedir sua recompensa para não ficar caro em gás.
+    function claimReward() public {
+        require(state == RevealingState.finished, "it isn't finished");
+        require(
+            participants[msg.sender].sc.verified == true,
+            "commit is not verified"
+        );
+        require(
+            participants[msg.sender].sc.value == uint256(majority),
+            "vote is not same as majority"
+        );
+        if (majority == PossibleVotes.yes) {
+            uint256 sendValue = prize / yesVoters;
+            payable(msg.sender).transfer(sendValue);
+        }
 
-
+        if (majority == PossibleVotes.no) {
+            uint256 sendValue = prize / yesVoters;
+            payable(msg.sender).transfer(sendValue);
+        }
+    }
 
     // lucro(?) O dinheiro vai ser dividido igualmente entre participantes, então vai sobrar um poquinho
     // vou fazer o pouquinho que sobrar voltar pro owner
-    // TODO: funcao view para saber o resultado
 
     // função auxiliar para ver o valor commitado
     function seeCommit() public view returns (bytes32) {
         return participants[msg.sender].sc.showCommit();
     }
 
-
-    // ESSA FUNÇÃO NÃO VAI SER USADA PARA GERAR O COMMIT PORQUE NÃO É 100% GARANTIA QUE O
-    // COMMIT VAI SER MANTIDO EM SEGREDO 
+    // ESSA FUNÇÃO ABAIXO NÃO VAI SER USADA PARA GERAR O COMMIT PORQUE NÃO É 100% GARANTIA QUE O
+    // COMMIT VAI SER MANTIDO EM SEGREDO
     // eu só deixei ela aqui para testar se eu conseguia gerar o mesh hash dessa função em javacript
-    function generateHash(string memory nonce, uint256 val) public pure returns (bytes32){
+    function generateHash(string memory nonce, uint256 val)
+        public
+        pure
+        returns (bytes32)
+    {
         return sha256(abi.encodePacked(nonce, val));
     }
-    
+
+    function getYesVoters() public view returns (uint256){
+        return yesVoters;
+    }
+   function getNoVoters() public view returns (uint256){
+        return noVoters;
+    }
+
 
     // função auxiliar para mostrar o estado atual
-    function showCurrentState() public view returns (RevealingState){
+    function showCurrentState() public view returns (RevealingState) {
         return state;
     }
 }

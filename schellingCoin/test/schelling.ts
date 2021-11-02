@@ -70,10 +70,33 @@ describe("Schelling", function () {
         ? await schellingInstance.connect(accounts[i]).reveal("nonce1", 1)
         : await schellingInstance.connect(accounts[i]).reveal("nonce1", 0);
     }
+    const yesVotes = await schellingInstance.getYesVoters();
+    const noVotes = await schellingInstance.getNoVoters();
+    expect(yesVotes).to.be.equal(6);
+    expect(noVotes).to.be.equal(4);
   });
 
   it("should be able to see majority votes", async () => {
     const majority = await schellingInstance.getMajority();
     expect(majority).to.be.oneOf([0, 1]);
+  });
+
+  it("owner should be able to set finished state", async () => {
+    const [owner] = await ethers.getSigners();
+    await schellingInstance.connect(owner).setFinishedState();
+    const state = await schellingInstance.showCurrentState();
+    expect(state).to.be.equal(2);
+  });
+
+  it("voters that didn't vote as majority shouldn't be able to claim reward", async () => {
+    const accounts = await ethers.getSigners();
+    await expect(
+      schellingInstance.connect(accounts[6]).claimReward()
+    ).to.be.revertedWith("vote is not same as majority");
+  });
+
+  it("participants should be able to claim funds", async () => {
+    const accounts = await ethers.getSigners();
+    await schellingInstance.connect(accounts[1]).claimReward();
   });
 });
