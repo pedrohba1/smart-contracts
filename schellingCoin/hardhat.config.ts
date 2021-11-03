@@ -6,7 +6,6 @@ import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
-import { BigNumber } from "@ethersproject/bignumber";
 
 chai.use(require("chai-bignumber")());
 

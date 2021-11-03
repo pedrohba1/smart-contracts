@@ -19,7 +19,7 @@ async function main() {
   const schellingInstance = await schelling
     .connect(owner)
     .deploy("O contratante da empresa ACME deveria pagar o seguro? (EXEMPLO)", {
-      value: ethers.utils.parseUnits("5.0", "ether"),
+      value: ethers.utils.parseUnits("1.0", "ether"),
     });
   await schellingInstance.deployed();
 }
